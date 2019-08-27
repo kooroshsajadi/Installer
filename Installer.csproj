@@ -32,8 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\IIS.Microsoft.Web.Administration.8.5.9600.17042\lib\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,14 +50,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DataVerification.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="FrmFeaturesInstallation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmFeaturesInstallation.Designer.cs">
+      <DependentUpon>FrmFeaturesInstallation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInstallAndSetUpSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInstallAndSetUpSystem.Designer.cs">
+      <DependentUpon>FrmInstallAndSetUpSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrerequisites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrerequisites.Designer.cs">
+      <DependentUpon>FrmPrerequisites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSoftwareInstallation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoftwareInstallation.Designer.cs">
+      <DependentUpon>FrmSoftwareInstallation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Installation.cs" />
+    <Compile Include="Prerequisite.cs" />
+    <Compile Include="PrerequisiteViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmFeaturesInstallation.resx">
+      <DependentUpon>FrmFeaturesInstallation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInstallAndSetUpSystem.resx">
+      <DependentUpon>FrmInstallAndSetUpSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrerequisites.resx">
+      <DependentUpon>FrmPrerequisites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoftwareInstallation.resx">
+      <DependentUpon>FrmSoftwareInstallation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +102,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
