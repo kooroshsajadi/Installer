@@ -87,6 +87,7 @@ namespace Installer
                     string storagePath = PublishPath + @"\App";
                     string log = TxtBxLog.Text;
                     FileManager.SaveLog(logFileName, storagePath, log);
+                    MessageBox.Show("." + "فرایند نصب با موفقیت کامل شد");
                 });
             }
             catch(Exception ex)

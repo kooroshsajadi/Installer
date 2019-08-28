@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Installer
@@ -86,9 +87,17 @@ namespace Installer
                 Prerequisite prequisities = new Prerequisite();
                 List<PrerequisiteViewModel> list = prequisities.GetPrerequisitesList();
                 dataGridView1.Rows.Clear();
-                foreach (PrerequisiteViewModel obj in list)
+                for (int i = 0; i < list.Count; i++)
                 {
-                    dataGridView1.Rows.Add(obj.Status, obj.Name, obj.Description);
+                    dataGridView1.Rows.Add(list[i].Status, list[i].Name, list[i].Description);
+                    if (dataGridView1.Rows[i].Cells[0].Value.Equals(true))
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    }
                 }
                     
                 BtnRerun.Enabled = true;

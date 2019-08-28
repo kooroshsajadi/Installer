@@ -88,7 +88,7 @@ namespace Installer
                     string storagePath = ProjectPath + @"Kasra\Project\" + WebsiteName;
                     string log = TxtBxLog.Text;
                     //FileManager.SaveLog(logFileName, storagePath, log);
-                    
+                    MessageBox.Show("." + "فرایند نصب با موفقیت تکمیل شد");
                 });
             }
             catch(Exception ex)
