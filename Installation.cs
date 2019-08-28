@@ -152,8 +152,8 @@ namespace Installer
                 mySite.ApplicationDefaults.ApplicationPoolName = FrmSoftwareInstallationObj.WebsiteName;
                 Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
                 keyValuePairs.Add("DataSource", FrmSoftwareInstallationObj.InstanceName);
-                keyValuePairs.Add("BaseCatalog", FrmSoftwareInstallationObj.DatabaseName);
-                keyValuePairs.Add("InitialCatalog", FrmSoftwareInstallationObj.DatabaseName);
+                keyValuePairs.Add("BaseCatalog", "Framework");
+                keyValuePairs.Add("InitialCatalog", "Framework");
 
                 ServerManager serverManager1 = new ServerManager();
 

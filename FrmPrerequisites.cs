@@ -90,7 +90,7 @@ namespace Installer
                 {
                     dataGridView1.Rows.Add(obj.Status, obj.Name, obj.Description);
                 }
-
+                    
                 BtnRerun.Enabled = true;
 
                 // These lines enable the continue button if the publish path is entered and all the status properties are true.

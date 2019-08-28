@@ -75,19 +75,19 @@ namespace Installer
                     
                     FileManager fileMngObj = new FileManager(this);
                     
-                    fileMngObj.CreateKasraDirectory();
-                    fileMngObj.CreateAutoBackupDirectory();
+                    //fileMngObj.CreateKasraDirectory();
+                    //fileMngObj.CreateAutoBackupDirectory();
                     // Copy the essential files into the project folder in order to configure the website.
-                    fileMngObj.CopyAndLog();
+                   // fileMngObj.CopyAndLog();
                     Installation installation = new Installation(this);
                     installation.ConfigureWebsite();
                     // Log that the site configuration was a success.
                     TextAppend = "\r\n\r\n" + DateTime.Now + "\r\nسایت با موفقیت ساخته شد.";
                     // Save the log in a physical path. Method 'SaveLog' is static.
-                    string logFileName = "log2";
+                    //string logFileName = "log2";
                     string storagePath = ProjectPath + @"Kasra\Project\" + WebsiteName;
                     string log = TxtBxLog.Text;
-                    FileManager.SaveLog(logFileName, storagePath, log);
+                    //FileManager.SaveLog(logFileName, storagePath, log);
                     
                 });
             }
