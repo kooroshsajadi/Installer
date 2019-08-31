@@ -70,23 +70,17 @@ namespace Installer
                 {
                     Installation installation = new Installation(this);
                     if (CheckBxIIS.Checked)
-                    {
                         installation.InstallIISAndLog();
+                    if (CheckBxKeyA.Checked)
                         installation.InstallKeyAAndLog();
-                        installation.InstallKasraPointServiceSetupAndLog();
-                    }
-                    else
-                    {
-                        if (CheckBxKeyA.Checked)
-                            installation.InstallKeyAAndLog();
-                        if (CheckBxKasraPointService.Checked)
-                            installation.InstallKasraPointServiceSetupAndLog();
-                    }   
+                    if (CheckBxKasraPrintService.Checked)
+                        installation.InstallKasraPrintServiceAndLog();
                     // Save the log in a physical path. Method 'SaveLog' is static.
                     string logFileName = "log1";
                     string storagePath = PublishPath + @"\App";
                     string log = TxtBxLog.Text;
                     FileManager.SaveLog(logFileName, storagePath, log);
+                    BtnSoftwareInstallation.Enabled = false;
                     MessageBox.Show("." + "فرایند نصب با موفقیت کامل شد");
                 });
             }

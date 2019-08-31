@@ -29,6 +29,7 @@ namespace Installer
         {
             try
             {
+                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nشروع نصب IIS...\r\n\r\n";
                 string[] featureNames = new[] { "NetFx4-AdvSrvs", "NetFx4Extended-ASPNET45", "WCF-Services45", "WCF-HTTP-Activation45",
                                             "WCF-TCP-Activation45", "WCF-Pipe-Activation45", "WCF-MSMQ-Activation45",
                                             "WCF-TCP-PortSharing45", "IIS-WebServerRole", "IIS-WebServer",
@@ -54,9 +55,9 @@ namespace Installer
                 foreach (string feature in featureNames)
                 {
                     Run("DISM", string.Format("/Online /NoRestart /Quiet /Enable-Feature:{0}", feature));
-                    FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\n" + feature + " فعال شد.\r\n\r\n";
+                    FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\n" + feature + " نصب شد.\r\n\r\n";
                 }
-                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nفعال سازی IIS با موفقیت تکمیل شد.\r\n\r\n";
+                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nنصب IIS با موفقیت تکمیل شد.\r\n\r\n";
             }
             catch(Exception ex)
             {
@@ -91,6 +92,7 @@ namespace Installer
         {
             try
             {
+                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nشروع فرایند نصب KeyA...\r\n\r\n";
                 string installerFilePath = FrmFeaturesInstallationObj.PublishPath + @"\Prerequisities\{6DE182B3-906D-4DEB-86B2-3F277CEFA73C}\KeyA2COMSetup.msi";
                 Process installerProcess = Process.Start(installerFilePath, "/q");
                 while (installerProcess.HasExited == false)
@@ -106,10 +108,11 @@ namespace Installer
                 MessageBox.Show(ex.Message);
             }
         }
-        public void InstallKasraPointServiceSetupAndLog()
+        public void InstallKasraPrintServiceAndLog()
         {
             try
             {
+                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nشروع فرایند نصب Kasra Print Service...\r\n\r\n";
                 string installerFilePath = FrmFeaturesInstallationObj.PublishPath + @"\Prerequisities\{5557871D-1688-440D-9376-1C05C96E3D4F}\KasraServiceSetup.msi";
                 Process installerProcess = Process.Start(installerFilePath, "/q");
                 while (installerProcess.HasExited == false)
@@ -118,7 +121,7 @@ namespace Installer
                     System.Windows.Forms.Application.DoEvents();
                 }
                 // Log that the Kasra Point Service has been installed.
-                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nنصب Kasra Point Service با موفقیت انجام شد.\r\n\r\n";
+                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nنصب Kasra Print Service با موفقیت انجام شد.\r\n\r\n";
             }
             catch(Exception ex)
             {

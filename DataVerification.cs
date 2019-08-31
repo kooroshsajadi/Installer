@@ -1,4 +1,7 @@
 ﻿using Microsoft.Web.Administration;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
@@ -74,10 +77,39 @@ namespace Installer
         // This method checks the connectability to the database.
         public void DatabaseConnectabilityVerification()
         {
-            string connectionString = "Password=" + FrmInstallAndSetUpSystemObj.DatabasePassword + ";Persist Security Info=True;User ID=" + FrmInstallAndSetUpSystemObj.DatabaseUsername + ";Initial Catalog=" + FrmInstallAndSetUpSystemObj.DatabaseName + ";Data Source=" + FrmInstallAndSetUpSystemObj.DatabaseInstanceName;
-            SqlConnection cnn = new SqlConnection(connectionString);
-            cnn.Open();
-            MessageBox.Show("." + "اتصال تایید شد");
+            try
+            {
+                string connectionString = "Password=" + FrmInstallAndSetUpSystemObj.DatabasePassword + ";Persist Security Info=True;User ID=" + FrmInstallAndSetUpSystemObj.DatabaseUsername + ";Initial Catalog=" + FrmInstallAndSetUpSystemObj.DatabaseName + ";Data Source=" + FrmInstallAndSetUpSystemObj.DatabaseInstanceName;
+                SqlConnection cnn = new SqlConnection(connectionString);
+                cnn.Open();
+                List<string> list = GetDatabaseList(cnn);
+                if (list.Contains(FrmInstallAndSetUpSystemObj.DatabaseName))
+                {
+                    MessageBox.Show("!" + "در سرور موجود است" + "." + "لطفا نام دیگری انتخاب کنید " + FrmInstallAndSetUpSystemObj.DatabaseName + " دیتابیسی با نام");
+                    FrmInstallAndSetUpSystemObj.DatabaseName = string.Empty;
+                }
+                else
+                    MessageBox.Show("." + "اتصال تایید شد");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private static List<string> GetDatabaseList(SqlConnection cnn)
+        {
+            List<string> list = new List<string>();
+            using (SqlCommand cmd = new SqlCommand("SELECT name from master.sys.databases", cnn))
+            {
+                using (IDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        list.Add(dr[0].ToString());
+                    }
+                }
+            }
+            return list;
         }
         public void ProjectPathVerification()
         {

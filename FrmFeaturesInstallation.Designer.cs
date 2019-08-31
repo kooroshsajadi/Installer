@@ -36,7 +36,7 @@
             this.CheckBxActiveDirectory = new System.Windows.Forms.CheckBox();
             this.CheckBxKeyA = new System.Windows.Forms.CheckBox();
             this.CheckBxFlashPlayer = new System.Windows.Forms.CheckBox();
-            this.CheckBxKasraPointService = new System.Windows.Forms.CheckBox();
+            this.CheckBxKasraPrintService = new System.Windows.Forms.CheckBox();
             this.GroupBx1 = new System.Windows.Forms.GroupBox();
             this.GroupBx2 = new System.Windows.Forms.GroupBox();
             this.TxtBxLog = new System.Windows.Forms.TextBox();
@@ -143,18 +143,18 @@
             this.CheckBxFlashPlayer.Text = "Flash Player";
             this.CheckBxFlashPlayer.UseVisualStyleBackColor = true;
             // 
-            // CheckBxKasraPointService
+            // CheckBxKasraPrintService
             // 
-            this.CheckBxKasraPointService.AutoSize = true;
-            this.CheckBxKasraPointService.Checked = true;
-            this.CheckBxKasraPointService.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBxKasraPointService.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBxKasraPointService.Location = new System.Drawing.Point(212, 65);
-            this.CheckBxKasraPointService.Name = "CheckBxKasraPointService";
-            this.CheckBxKasraPointService.Size = new System.Drawing.Size(118, 17);
-            this.CheckBxKasraPointService.TabIndex = 8;
-            this.CheckBxKasraPointService.Text = "Kasra Point Service";
-            this.CheckBxKasraPointService.UseVisualStyleBackColor = true;
+            this.CheckBxKasraPrintService.AutoSize = true;
+            this.CheckBxKasraPrintService.Checked = true;
+            this.CheckBxKasraPrintService.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckBxKasraPrintService.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckBxKasraPrintService.Location = new System.Drawing.Point(212, 65);
+            this.CheckBxKasraPrintService.Name = "CheckBxKasraPrintService";
+            this.CheckBxKasraPrintService.Size = new System.Drawing.Size(116, 17);
+            this.CheckBxKasraPrintService.TabIndex = 8;
+            this.CheckBxKasraPrintService.Text = "Kasra Print Service";
+            this.CheckBxKasraPrintService.UseVisualStyleBackColor = true;
             // 
             // GroupBx1
             // 
@@ -171,7 +171,7 @@
             // GroupBx2
             // 
             this.GroupBx2.Controls.Add(this.CheckBxSQLServer2017);
-            this.GroupBx2.Controls.Add(this.CheckBxKasraPointService);
+            this.GroupBx2.Controls.Add(this.CheckBxKasraPrintService);
             this.GroupBx2.Controls.Add(this.CheckBxIIS);
             this.GroupBx2.Controls.Add(this.CheckBxFlashPlayer);
             this.GroupBx2.Controls.Add(this.CheckBxActiveDirectory);
@@ -225,7 +225,7 @@
         private System.Windows.Forms.CheckBox CheckBxActiveDirectory;
         private System.Windows.Forms.CheckBox CheckBxKeyA;
         private System.Windows.Forms.CheckBox CheckBxFlashPlayer;
-        private System.Windows.Forms.CheckBox CheckBxKasraPointService;
+        private System.Windows.Forms.CheckBox CheckBxKasraPrintService;
         private System.Windows.Forms.GroupBox GroupBx1;
         private System.Windows.Forms.GroupBox GroupBx2;
         private System.Windows.Forms.TextBox TxtBxLog;

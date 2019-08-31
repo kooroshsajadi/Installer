@@ -32,6 +32,7 @@ namespace Installer
 
         public string DatabaseName
         {
+            set { TxtBxDatabaseName.Text = value; }
             get { return TxtBxDatabaseName.Text; }
         }
 
