@@ -45,7 +45,7 @@ namespace Installer
             }
         }
 
-        public FrmSoftwareInstallation(string publishPath, string websiteName, string portNumber, string projectPath, string mDFPath, string lDFPath, string backupPath, string databaseName, string instanceName)
+        public FrmSoftwareInstallation(string publishPath, string websiteName, string portNumber, string projectPath, string mDFPath, string lDFPath, string backupPath, string databaseName, string instanceName, string username, string password)
         {
             PublishPath = publishPath;
             WebsiteName = websiteName;
@@ -56,6 +56,8 @@ namespace Installer
             BackupPath = backupPath;
             DatabaseName = databaseName;
             InstanceName = instanceName;
+            Username = username;
+            Password = password;
             InitializeComponent();
         }
 
@@ -74,9 +76,10 @@ namespace Installer
                 {
                     
                     FileManager fileMngObj = new FileManager(this);
-                    
+
                     //fileMngObj.CreateKasraDirectory();
                     //fileMngObj.CreateAutoBackupDirectory();
+                    fileMngObj.RestoreDatabase();
                     // Copy the essential files into the project folder in order to configure the website.
                     //fileMngObj.CopyAndLog();
                     Installation installation = new Installation(this);

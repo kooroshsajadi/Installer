@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
 
@@ -35,6 +37,12 @@ namespace Installer
                 // Create 'Project' directory in 'Kasra' to send the publish files into.
                 Directory.CreateDirectory(dir + "\\Project");
                 Directory.CreateDirectory(dir + "\\Project\\" + FrmSoftwareInstallationObj.WebsiteName);
+
+                if(FrmSoftwareInstallationObj.MDFPath == FrmSoftwareInstallationObj.ProjectPath)
+                {
+                    // Create 'Etc' directory in 'Kasra'.
+                    Directory.CreateDirectory(dir + "\\Data");
+                }
             }
             catch(Exception ex)
             {
@@ -122,6 +130,42 @@ namespace Installer
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        public void RestoreDatabase()
+        {
+            // Create 'Data' directory.
+            string dir = FrmSoftwareInstallationObj.ProjectPath + "\\Kasra\\Data";
+            Directory.CreateDirectory(dir);
+
+            // Create the connection string.
+            string connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=master" + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
+
+            SqlConnection cnn = new SqlConnection(connectionString);
+
+            string query = $@"CREATE DATABASE {FrmSoftwareInstallationObj.DatabaseName} ON PRIMARY 
+                            (NAME = {FrmSoftwareInstallationObj.DatabaseName}_Data, 
+                            FILENAME = '{FrmSoftwareInstallationObj.MDFPath}m.mdf', 
+                            SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%) 
+                            LOG ON (NAME = {FrmSoftwareInstallationObj.DatabaseName}_Log, 
+                            FILENAME = '{FrmSoftwareInstallationObj.LDFPath}l.ldf', 
+                            SIZE = 1MB, MAXSIZE = 5MB, FILEGROWTH = 10%)";
+            try
+            {
+                SqlCommand myCommand = new SqlCommand(query, cnn);
+                cnn.Open();
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
             }
         }
     }

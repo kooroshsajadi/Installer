@@ -79,9 +79,12 @@ namespace Installer
         {
             try
             {
-                string connectionString = "Password=" + FrmInstallAndSetUpSystemObj.DatabasePassword + ";Persist Security Info=True;User ID=" + FrmInstallAndSetUpSystemObj.DatabaseUsername + ";Initial Catalog=" + FrmInstallAndSetUpSystemObj.DatabaseName + ";Data Source=" + FrmInstallAndSetUpSystemObj.DatabaseInstanceName;
+                // Try to open the SQL server using the connection string.
+                string connectionString = "Password=" + FrmInstallAndSetUpSystemObj.DatabasePassword + ";Persist Security Info=True;User ID=" + FrmInstallAndSetUpSystemObj.DatabaseUsername + ";Initial Catalog=master" + ";Data Source=" + FrmInstallAndSetUpSystemObj.DatabaseInstanceName;
                 SqlConnection cnn = new SqlConnection(connectionString);
                 cnn.Open();
+
+                // Get the list of the databases in the server and check whether the given name is contained or not.
                 List<string> list = GetDatabaseList(cnn);
                 if (list.Contains(FrmInstallAndSetUpSystemObj.DatabaseName))
                 {
@@ -90,6 +93,7 @@ namespace Installer
                 }
                 else
                     MessageBox.Show("." + "اتصال تایید شد");
+
             }
             catch(Exception ex)
             {

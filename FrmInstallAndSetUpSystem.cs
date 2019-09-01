@@ -104,7 +104,7 @@ namespace Installer
                 string verificationMessage = dataVerification.FinalVerification();
                 if (verificationMessage.Equals(string.Empty))
                 {
-                    FrmSoftwareInstallation frmSoftwareInstallationObj = new FrmSoftwareInstallation(PublishPath, TxtBxWebsiteName.Text, TxtBxPortNumber.Text, TxtBxProjectPath.Text, TxtBxMDFPath.Text, TxtBxLDFPath.Text, TxtBxBackupPath.Text, TxtBxDatabaseName.Text, TxtBxDatabaseInstanceName.Text);
+                    FrmSoftwareInstallation frmSoftwareInstallationObj = new FrmSoftwareInstallation(PublishPath, TxtBxWebsiteName.Text, TxtBxPortNumber.Text, TxtBxProjectPath.Text, TxtBxMDFPath.Text, TxtBxLDFPath.Text, TxtBxBackupPath.Text, TxtBxDatabaseName.Text, TxtBxDatabaseInstanceName.Text, TxtBxDataBaseUsername.Text, TxtBxDatabasePassword.Text);
                     frmSoftwareInstallationObj.RestaurantCheckBox = CkeckBxRestaurant.Checked ? true : false;
                     frmSoftwareInstallationObj.WebServerDatabaseCheckBox = CheckBxWebServerDatabase.Checked ? true : false;
                     frmSoftwareInstallationObj.Show();
