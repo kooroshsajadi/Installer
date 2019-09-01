@@ -2,11 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 using System.Diagnostics;
-using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Installer
 {
@@ -151,51 +150,21 @@ namespace Installer
 
                 // Create the customized website where the app files are stored(in the 'websitePhysicalPath').
                 string websitePhysicalPath = FrmSoftwareInstallationObj.ProjectPath + @"Kasra\Project\" + FrmSoftwareInstallationObj.WebsiteName;
-                // + FrmSoftwareInstallationObj.WebsiteName
                 Site mySite = serverManager.Sites.Add(FrmSoftwareInstallationObj.WebsiteName, "http", "*:" + FrmSoftwareInstallationObj.PortNumber + ":", websitePhysicalPath);
 
                 // Add the website and its application to the pool.
                 mySite.ApplicationDefaults.ApplicationPoolName = FrmSoftwareInstallationObj.WebsiteName;
+
+                serverManager.CommitChanges();
+
                 Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
                 keyValuePairs.Add("DataSource", FrmSoftwareInstallationObj.InstanceName);
                 keyValuePairs.Add("BaseCatalog", "Framework");
                 keyValuePairs.Add("InitialCatalog", "Framework");
 
-                ServerManager serverManager1 = new ServerManager();
-
-                // Add the 'FrmPresentation' app.
-                string appPhysicalPath = websitePhysicalPath + @"\Framework\FrmPresentation\FrmPresentation";
-                mySite.Applications.Add("/Framework/FrmPresentation/FrmPresentation", appPhysicalPath);
-                // Add the previous app again in order to add it to the root directory.
-                mySite.Applications.Add("/FrmPresentation", appPhysicalPath);
-                // Add the connection string to its web config.
-                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
-
-                // Do the same for the other apps. Framework2003 app.
-                appPhysicalPath = websitePhysicalPath + @"\Framework2003";
-                mySite.Applications.Add("/Framework2003", appPhysicalPath);
-                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
-
-                // TAPresentation app.
-                appPhysicalPath = websitePhysicalPath + @"\TA\TAPresentation\TAPresentation";
-                mySite.Applications.Add("/TA/TAPresentation/TAPresentation", appPhysicalPath);
-                mySite.Applications.Add("/TAPresentation", appPhysicalPath);
-                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\web.config");
-
-                // Lego.Web app.
-                appPhysicalPath = websitePhysicalPath + @"\Lego.Web";
-                mySite.Applications.Add("/Lego.Web", appPhysicalPath);
-                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
-
-                // Add the restaurant app if its check box is enabled.
-                if (FrmSoftwareInstallationObj.RestaurantCheckBox)
-                {
-                    appPhysicalPath = websitePhysicalPath + @"\Restaurant\RstPresentation\RstPresentation";
-                    mySite.Applications.Add("/Restaurant/RstPresentation/RstPresentation", appPhysicalPath);
-                    mySite.Applications.Add("/Restaurant", appPhysicalPath);
-                    AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
-                }
-                serverManager.CommitChanges();
+                string webConfigPath = FrmSoftwareInstallationObj.ProjectPath + "Kasra\\Project\\" + FrmSoftwareInstallationObj.WebsiteName + "\\Framework\\FrmPresentation\\FrmPresentation\\Web.config";
+                ChangeWebConfig(webConfigPath, FrmSoftwareInstallationObj.DatabaseName, FrmSoftwareInstallationObj.InstanceName);
+                
             }
             catch(Exception ex)
             {
@@ -237,5 +206,60 @@ namespace Installer
                 MessageBox.Show(ex.Message);
             }
         }
+        private void ChangeWebConfig(string PathToWebConfig, string databaseName, string databaseInstance)
+        {
+            try
+            {
+                XDocument config = XDocument.Load(PathToWebConfig);
+                XElement targetNode = config.Root.Element("appSettings").Elements("add").SingleOrDefault(x => x.FirstAttribute.Value == "DataSource");
+                targetNode.LastAttribute.Value = databaseInstance;
+                XElement targetNodePw = config.Root.Element("appSettings").Elements("add").SingleOrDefault(x => x.FirstAttribute.Value == "InitialCatalog");
+                targetNodePw.LastAttribute.Value = databaseName;
+                var targetNodeAddress = config.Root.Element("appSettings").Elements("add").SingleOrDefault(x => x.FirstAttribute.Value == "BaseCatalog");
+                targetNodeAddress.LastAttribute.Value = databaseName;
+
+                config.Save(PathToWebConfig);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
+/*
+ ServerManager serverManager1 = new ServerManager();
+
+                // Add the 'FrmPresentation' app.
+                string appPhysicalPath = websitePhysicalPath + @"\Framework\FrmPresentation\FrmPresentation";
+                mySite.Applications.Add("/Framework/FrmPresentation/FrmPresentation", appPhysicalPath);
+                // Add the previous app again in order to add it to the root directory.
+                mySite.Applications.Add("/FrmPresentation", appPhysicalPath);
+                // Add the connection string to its web config.
+                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
+
+                // Do the same for the other apps. Framework2003 app.
+                appPhysicalPath = websitePhysicalPath + @"\Framework2003";
+                mySite.Applications.Add("/Framework2003", appPhysicalPath);
+                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
+
+                // TAPresentation app.
+                appPhysicalPath = websitePhysicalPath + @"\TA\TAPresentation\TAPresentation";
+                mySite.Applications.Add("/TA/TAPresentation/TAPresentation", appPhysicalPath);
+                mySite.Applications.Add("/TAPresentation", appPhysicalPath);
+                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\web.config");
+
+                // Lego.Web app.
+                appPhysicalPath = websitePhysicalPath + @"\Lego.Web";
+                mySite.Applications.Add("/Lego.Web", appPhysicalPath);
+                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
+
+                // Add the restaurant app if its check box is enabled.
+                if (FrmSoftwareInstallationObj.RestaurantCheckBox)
+                {
+                    appPhysicalPath = websitePhysicalPath + @"\Restaurant\RstPresentation\RstPresentation";
+                    mySite.Applications.Add("/Restaurant/RstPresentation/RstPresentation", appPhysicalPath);
+                    mySite.Applications.Add("/Restaurant", appPhysicalPath);
+                    AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
+                }
+                serverManager.CommitChanges();*/

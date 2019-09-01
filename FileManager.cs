@@ -143,12 +143,14 @@ namespace Installer
 
             SqlConnection cnn = new SqlConnection(connectionString);
 
+            string path = FrmSoftwareInstallationObj.ProjectPath + "\\Kasra\\Data";
+
             string query = $@"CREATE DATABASE {FrmSoftwareInstallationObj.DatabaseName} ON PRIMARY 
                             (NAME = {FrmSoftwareInstallationObj.DatabaseName}_Data, 
-                            FILENAME = '{FrmSoftwareInstallationObj.MDFPath}m.mdf', 
+                            FILENAME = '{path}\m.mdf', 
                             SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%) 
                             LOG ON (NAME = {FrmSoftwareInstallationObj.DatabaseName}_Log, 
-                            FILENAME = '{FrmSoftwareInstallationObj.LDFPath}l.ldf', 
+                            FILENAME = '{path}\l.ldf', 
                             SIZE = 1MB, MAXSIZE = 5MB, FILEGROWTH = 10%)";
             try
             {
