@@ -77,11 +77,11 @@ namespace Installer
                     
                     FileManager fileMngObj = new FileManager(this);
 
-                    //fileMngObj.CreateKasraDirectory();
-                    //fileMngObj.CreateAutoBackupDirectory();
-                    fileMngObj.RestoreDatabase();
+                    fileMngObj.CreateKasraDirectory();
+                    fileMngObj.CreateAutoBackupDirectory();
+                    //fileMngObj.RestoreDatabase();
                     // Copy the essential files into the project folder in order to configure the website.
-                    //fileMngObj.CopyAndLog();
+                    fileMngObj.CopyAndLog();
                     Installation installation = new Installation(this);
                     installation.ConfigureWebsite();
                     // Log that the site configuration was a success.
@@ -92,6 +92,12 @@ namespace Installer
                     string log = TxtBxLog.Text;
                     FileManager.SaveLog(logFileName, storagePath, log);
                     MessageBox.Show("." + "فرایند نصب با موفقیت تکمیل شد");
+                });
+
+                Task.Run(() =>
+                {
+                    FileManager fileMngObj = new FileManager(this);
+                    fileMngObj.RestoreDatabase();
                 });
             }
             catch(Exception ex)
