@@ -38,7 +38,7 @@
             this.LbPort = new System.Windows.Forms.Label();
             this.LbSiteName = new System.Windows.Forms.Label();
             this.GroupBxModuleSelection = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBxWebServer = new System.Windows.Forms.CheckBox();
             this.CkeckBxRestaurant = new System.Windows.Forms.CheckBox();
             this.BtnInstallSoftware = new System.Windows.Forms.Button();
             this.BtnPrevious = new System.Windows.Forms.Button();
@@ -164,7 +164,7 @@
             // 
             // GroupBxModuleSelection
             // 
-            this.GroupBxModuleSelection.Controls.Add(this.checkBox2);
+            this.GroupBxModuleSelection.Controls.Add(this.checkBxWebServer);
             this.GroupBxModuleSelection.Controls.Add(this.CkeckBxRestaurant);
             this.GroupBxModuleSelection.Location = new System.Drawing.Point(12, 438);
             this.GroupBxModuleSelection.Name = "GroupBxModuleSelection";
@@ -173,15 +173,15 @@
             this.GroupBxModuleSelection.TabStop = false;
             this.GroupBxModuleSelection.Text = "انتخاب ماژول ها";
             // 
-            // checkBox2
+            // checkBxWebServer
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(492, 34);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(194, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "آیا مایل به نصب وب سرویس میباشید";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBxWebServer.AutoSize = true;
+            this.checkBxWebServer.Location = new System.Drawing.Point(492, 34);
+            this.checkBxWebServer.Name = "checkBxWebServer";
+            this.checkBxWebServer.Size = new System.Drawing.Size(194, 17);
+            this.checkBxWebServer.TabIndex = 1;
+            this.checkBxWebServer.Text = "آیا مایل به نصب وب سرویس میباشید";
+            this.checkBxWebServer.UseVisualStyleBackColor = true;
             // 
             // CkeckBxRestaurant
             // 
@@ -493,7 +493,7 @@
         private System.Windows.Forms.Button BtnProjectPathBrowser;
         private System.Windows.Forms.TextBox TxtBxPortNumber;
         private System.Windows.Forms.TextBox TxtBxWebsiteName;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBxWebServer;
         private System.Windows.Forms.CheckBox CkeckBxRestaurant;
         private System.Windows.Forms.Label LbBankName;
         private System.Windows.Forms.Label LbInstanceName;

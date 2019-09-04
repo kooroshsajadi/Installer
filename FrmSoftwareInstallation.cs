@@ -22,6 +22,7 @@ namespace Installer
         public string LDFPath { set; get; }
         public string BackupPath { set; get; }
         public bool RestaurantCheckBox { set; get; }
+        public bool WebServiceCheckBox { set; get; }
         public bool WebServerDatabaseCheckBox { set; get; }
         public int ProgressBarValue
         {
@@ -77,13 +78,13 @@ namespace Installer
                     
                     FileManager fileMngObj = new FileManager(this);
 
-                    fileMngObj.CreateKasraDirectory();
-                    fileMngObj.CreateAutoBackupDirectory();
-                    //fileMngObj.RestoreDatabase();
+                    //fileMngObj.CreateKasraDirectory();
+                    //fileMngObj.CreateAutoBackupDirectory();
+                    fileMngObj.RestoreDatabase();
                     // Copy the essential files into the project folder in order to configure the website.
-                    fileMngObj.CopyAndLog();
+                    //fileMngObj.CopyAndLog();
                     Installation installation = new Installation(this);
-                    installation.ConfigureWebsite();
+                    //installation.ConfigureWebsite();
                     // Log that the site configuration was a success.
                     TextAppend = "\r\n\r\n" + DateTime.Now + "\r\nسایت با موفقیت ساخته شد.";
                     // Save the log in a physical path. Method 'SaveLog' is static.

@@ -190,6 +190,15 @@ namespace Installer
                     ChangeWebConfig(appPhysicalPath + "\\Web.config", FrmSoftwareInstallationObj.DatabaseName, FrmSoftwareInstallationObj.InstanceName);
                 }
 
+                // Add the web services app if its check box is enabled.
+                if (FrmSoftwareInstallationObj.WebServiceCheckBox)
+                {
+                    appPhysicalPath = websitePhysicalPath + @"\WebServices\KasraWebServices";
+                    mySite.Applications.Add("/WebServices/KasraWebServices", appPhysicalPath);
+                    mySite.Applications.Add("/KasraWebServices", appPhysicalPath);
+                    ChangeWebConfig(appPhysicalPath + "\\Web.config", FrmSoftwareInstallationObj.DatabaseName, FrmSoftwareInstallationObj.InstanceName);
+                }
+
                 serverManager.CommitChanges();
             }
             catch (Exception ex)
