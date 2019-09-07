@@ -1,0 +1,2 @@
+CREATE
+USER [kasra] FOR LOGIN [kasra]

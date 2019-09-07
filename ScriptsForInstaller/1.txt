@@ -1,0 +1,4 @@
+IF
+EXISTS (SELECT * FROM sys.server_principals WHERE name = N'kasra') 
+DROP
+LOGIN [kasra]

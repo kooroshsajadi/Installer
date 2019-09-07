@@ -262,39 +262,3 @@ namespace Installer
         }
     }
 }
-/*
- ServerManager serverManager1 = new ServerManager();
-
-                // Add the 'FrmPresentation' app.
-                string appPhysicalPath = websitePhysicalPath + @"\Framework\FrmPresentation\FrmPresentation";
-                mySite.Applications.Add("/Framework/FrmPresentation/FrmPresentation", appPhysicalPath);
-                // Add the previous app again in order to add it to the root directory.
-                mySite.Applications.Add("/FrmPresentation", appPhysicalPath);
-                // Add the connection string to its web config.
-                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
-
-                // Do the same for the other apps. Framework2003 app.
-                appPhysicalPath = websitePhysicalPath + @"\Framework2003";
-                mySite.Applications.Add("/Framework2003", appPhysicalPath);
-                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
-
-                // TAPresentation app.
-                appPhysicalPath = websitePhysicalPath + @"\TA\TAPresentation\TAPresentation";
-                mySite.Applications.Add("/TA/TAPresentation/TAPresentation", appPhysicalPath);
-                mySite.Applications.Add("/TAPresentation", appPhysicalPath);
-                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\web.config");
-
-                // Lego.Web app.
-                appPhysicalPath = websitePhysicalPath + @"\Lego.Web";
-                mySite.Applications.Add("/Lego.Web", appPhysicalPath);
-                AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
-
-                // Add the restaurant app if its check box is enabled.
-                if (FrmSoftwareInstallationObj.RestaurantCheckBox)
-                {
-                    appPhysicalPath = websitePhysicalPath + @"\Restaurant\RstPresentation\RstPresentation";
-                    mySite.Applications.Add("/Restaurant/RstPresentation/RstPresentation", appPhysicalPath);
-                    mySite.Applications.Add("/Restaurant", appPhysicalPath);
-                    AddToAppSettings(keyValuePairs, appPhysicalPath + @"\Web.config");
-                }
-                serverManager.CommitChanges();*/

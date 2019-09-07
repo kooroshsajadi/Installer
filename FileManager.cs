@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
@@ -135,7 +134,7 @@ namespace Installer
         public void RestoreDatabase()
         {
             // Create 'Data' directory.
-            string dir = FrmSoftwareInstallationObj.ProjectPath + "\\Kasra\\Data";
+            string dir = FrmSoftwareInstallationObj.ProjectPath + "Kasra\\Data";
             Directory.CreateDirectory(dir);
 
             // Create the connection string.
@@ -143,7 +142,7 @@ namespace Installer
 
             SqlConnection cnn = new SqlConnection(connectionString);
 
-            string path = FrmSoftwareInstallationObj.ProjectPath + "\\Kasra\\Data";
+            string path = FrmSoftwareInstallationObj.ProjectPath + "Kasra\\Data";
 
             string query = $@"CREATE DATABASE {FrmSoftwareInstallationObj.DatabaseName} ON PRIMARY 
                             (NAME = {FrmSoftwareInstallationObj.DatabaseName}_Data, 
@@ -157,6 +156,19 @@ namespace Installer
                 SqlCommand myCommand = new SqlCommand(query, cnn);
                 cnn.Open();
                 myCommand.ExecuteNonQuery();
+                // Go to the path in which contains all the querries.
+                string pathToContainingFolder = Environment.CurrentDirectory + "\\ScriptsForInstaller";
+                string q = File.ReadAllText(pathToContainingFolder + "/1.txt");
+                QueryRunner(q, true);
+                string q1 = File.ReadAllText(pathToContainingFolder + "/2.txt");
+                string q2 = File.ReadAllText(pathToContainingFolder + "/3.txt");
+                string q3 = File.ReadAllText(pathToContainingFolder + "/4.txt");
+                QueryRunner(q1, q2, q3);
+                for(int i = 5; i <= 13; i++)
+                {
+                    q = File.ReadAllText(pathToContainingFolder + "/" + i + ".txt");
+                    QueryRunner(q, false);
+                }
             }
             catch (Exception ex)
             {
@@ -164,11 +176,98 @@ namespace Installer
             }
             finally
             {
-                if (cnn.State == ConnectionState.Open)
+                if (cnn.State == System.Data.ConnectionState.Open)
                 {
                     cnn.Close();
                 }
             }
         }
+
+        // This method accesses the SQL server and modifies the databases as needed.
+        private void QueryRunner(string query, bool multipleDatabases)
+        { 
+            // Create the essential variables to connect to the SQL server.
+            string connectionString;
+            // The SqlConnection instance is first set to null because the finally block gives an error otherwise.
+            SqlConnection cnn;
+            SqlCommand myCommand;
+
+            try
+            {
+                if (multipleDatabases)
+                {
+                    // The databases are arranged in the same order as are given in the document.
+                    string[] dataBases = { "master", FrmSoftwareInstallationObj.DatabaseName, "model", "tempdb" };
+
+                    for (int i = 0; i < dataBases.Length; i++)
+                    {
+                        // Define the connection string and in each iteration place the appropriate database in it.
+                        connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + dataBases[i] + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
+                        cnn = new SqlConnection(connectionString);
+                        myCommand = new SqlCommand(query, cnn);
+                        cnn.Open();
+                        myCommand.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + FrmSoftwareInstallationObj.DatabaseName + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
+                    cnn = new SqlConnection(connectionString);
+                    myCommand = new SqlCommand(query, cnn);
+                    cnn.Open();
+                    myCommand.ExecuteNonQuery();
+                    cnn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void QueryRunner(string query1, string query2, string query3)
+        {
+            // Create the essential variables to connect to the SQL server.
+            string connectionString;
+            // The SqlConnection instance is first set to null because the finally block gives an error otherwise.
+            SqlConnection cnn;
+            SqlCommand myCommand;
+
+            try
+            {
+                connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=master;Data Source=" + FrmSoftwareInstallationObj.InstanceName;
+                cnn = new SqlConnection(connectionString);
+                myCommand = new SqlCommand(query1, cnn);
+                cnn.Open();
+                myCommand.ExecuteNonQuery();
+                cnn.Close();
+                // The databases are arranged in the same order as are given in the document.
+                string[] dataBases = { FrmSoftwareInstallationObj.DatabaseName, "model", "tempdb" };
+                for (int i = 0; i < dataBases.Length; i++)
+                {
+                    // Define the connection string and in each iteration place the appropriate database in it.
+                    connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + dataBases[i] + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
+                    cnn = new SqlConnection(connectionString);
+                    myCommand = new SqlCommand(query2, cnn);
+                    cnn.Open();
+                    myCommand.ExecuteNonQuery();
+                    cnn.Close();
+                    myCommand = new SqlCommand(query3, cnn);
+                    cnn.Open();
+                    myCommand.ExecuteNonQuery();
+                    cnn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
+/*finally
+            {
+                if (cnn.State == System.Data.ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }*/
