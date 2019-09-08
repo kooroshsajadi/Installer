@@ -43,10 +43,10 @@
             this.BtnNext = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BtnRerun = new System.Windows.Forms.Button();
             this.ColStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColPrerequisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDiscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnRerun = new System.Windows.Forms.Button();
             this.GroupBx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -176,18 +176,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 233);
             this.dataGridView1.TabIndex = 2;
             // 
-            // BtnRerun
-            // 
-            this.BtnRerun.Enabled = false;
-            this.BtnRerun.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRerun.Location = new System.Drawing.Point(697, 415);
-            this.BtnRerun.Name = "BtnRerun";
-            this.BtnRerun.Size = new System.Drawing.Size(90, 23);
-            this.BtnRerun.TabIndex = 1;
-            this.BtnRerun.Text = "بررسی مجدد";
-            this.BtnRerun.UseVisualStyleBackColor = true;
-            this.BtnRerun.Click += new System.EventHandler(this.BtnRerun_Click);
-            // 
             // ColStatus
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -228,6 +216,18 @@
             this.ColDiscription.Name = "ColDiscription";
             this.ColDiscription.ReadOnly = true;
             this.ColDiscription.Width = 300;
+            // 
+            // BtnRerun
+            // 
+            this.BtnRerun.Enabled = false;
+            this.BtnRerun.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRerun.Location = new System.Drawing.Point(697, 415);
+            this.BtnRerun.Name = "BtnRerun";
+            this.BtnRerun.Size = new System.Drawing.Size(90, 23);
+            this.BtnRerun.TabIndex = 1;
+            this.BtnRerun.Text = "بررسی مجدد";
+            this.BtnRerun.UseVisualStyleBackColor = true;
+            this.BtnRerun.Click += new System.EventHandler(this.BtnRerun_Click);
             // 
             // FrmPrerequisites
             // 

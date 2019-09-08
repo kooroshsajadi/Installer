@@ -86,9 +86,6 @@ namespace Installer
                 int allFiles = Directory.GetFiles(publishPath, "*.*", SearchOption.AllDirectories).Length;
                 int count = 0;
 
-                // Create a directory named as the first folder in publish path that is intended to get copied.
-                //projectPath += FrmSoftwareInstallationObj.PublishPath.Substring(FrmSoftwareInstallationObj.PublishPath.LastIndexOf('\\'));
-
                 // Create a folder named as the name of the website.
                 Directory.CreateDirectory(projectPath);
 
@@ -188,7 +185,6 @@ namespace Installer
         { 
             // Create the essential variables to connect to the SQL server.
             string connectionString;
-            // The SqlConnection instance is first set to null because the finally block gives an error otherwise.
             SqlConnection cnn;
             SqlCommand myCommand;
 
@@ -201,7 +197,7 @@ namespace Installer
 
                     for (int i = 0; i < dataBases.Length; i++)
                     {
-                        // Define the connection string and in each iteration place the appropriate database in it.
+                        // Define the connection string and add the appropraite database name to it in each iteration.
                         connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + dataBases[i] + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
                         cnn = new SqlConnection(connectionString);
                         myCommand = new SqlCommand(query, cnn);
@@ -209,7 +205,7 @@ namespace Installer
                         myCommand.ExecuteNonQuery();
                     }
                 }
-                else
+                else // in this condition the connection string contains the database name given by the user.
                 {
                     connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + FrmSoftwareInstallationObj.DatabaseName + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
                     cnn = new SqlConnection(connectionString);
@@ -228,7 +224,6 @@ namespace Installer
         {
             // Create the essential variables to connect to the SQL server.
             string connectionString;
-            // The SqlConnection instance is first set to null because the finally block gives an error otherwise.
             SqlConnection cnn;
             SqlCommand myCommand;
 
@@ -264,10 +259,3 @@ namespace Installer
         }
     }
 }
-/*finally
-            {
-                if (cnn.State == System.Data.ConnectionState.Open)
-                {
-                    cnn.Close();
-                }
-            }*/
