@@ -79,29 +79,28 @@ namespace Installer
                     FileManager fileMngObj = new FileManager(this);
 
                     //fileMngObj.CreateKasraDirectory();
-                    fileMngObj.CreateAutoBackupDirectory();
-                    fileMngObj.RestoreDatabase();
+                    //fileMngObj.CreateAutoBackupDirectory();
+                    //fileMngObj.RestoreDatabase();
 
                     // Copy the essential files into the project folder in order to configure the website.
                     //fileMngObj.CopyAndLog();
 
-                    Installation installation = new Installation(this);
-                    installation.ConfigureWebsite();
+                    //Installation installation = new Installation(this);
+                    //installation.ConfigureWebsite();
 
                     // Log that the site configuration was a success.
-                    TextAppend = "\r\n\r\n" + DateTime.Now + "\r\nسایت با موفقیت ساخته شد.";
+                    //TextAppend = "\r\n\r\n" + DateTime.Now + "\r\nسایت با موفقیت ساخته شد.";
 
                     // Save the log in a physical path. Method 'SaveLog' is static.
-                    string logFileName = "log2";
-                    string storagePath = ProjectPath + @"Kasra\Project\" + WebsiteName;
-                    string log = TxtBxLog.Text;
-                    FileManager.SaveLog(logFileName, storagePath, log);
+                    //string logFileName = "log2";
+                    //string storagePath = ProjectPath + @"Kasra\Project\" + WebsiteName;
+                    //string log = TxtBxLog.Text;
+                    //FileManager.SaveLog(logFileName, storagePath, log);
 
                     MessageBox.Show("." + "فرایند نصب با موفقیت تکمیل شد");
                 });
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -110,6 +109,16 @@ namespace Installer
         private void TxtBxLog_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("دارید" + "؟" + " restart " + "آیا تمایل به ", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("ShutDown", "/r");
+            }
+            else
+                Close();
         }
     }
 }
