@@ -38,43 +38,62 @@
             this.CheckBxFlashPlayer = new System.Windows.Forms.CheckBox();
             this.CheckBxKasraPrintService = new System.Windows.Forms.CheckBox();
             this.GroupBx1 = new System.Windows.Forms.GroupBox();
-            this.GroupBx2 = new System.Windows.Forms.GroupBox();
             this.TxtBxLog = new System.Windows.Forms.TextBox();
             this.GroupBx1.SuspendLayout();
-            this.GroupBx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnSoftwareInstallation
             // 
-            this.BtnSoftwareInstallation.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSoftwareInstallation.Location = new System.Drawing.Point(649, 15);
+            this.BtnSoftwareInstallation.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnSoftwareInstallation.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSoftwareInstallation.BackgroundImage = global::Installer.Properties.Resources.Group_2169_2x_min;
+            this.BtnSoftwareInstallation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSoftwareInstallation.FlatAppearance.BorderSize = 0;
+            this.BtnSoftwareInstallation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSoftwareInstallation.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.BtnSoftwareInstallation.ForeColor = System.Drawing.Color.White;
+            this.BtnSoftwareInstallation.Location = new System.Drawing.Point(178, 105);
             this.BtnSoftwareInstallation.Name = "BtnSoftwareInstallation";
-            this.BtnSoftwareInstallation.Size = new System.Drawing.Size(133, 23);
+            this.BtnSoftwareInstallation.Size = new System.Drawing.Size(185, 35);
             this.BtnSoftwareInstallation.TabIndex = 0;
             this.BtnSoftwareInstallation.Text = "نصب نرم افزار های جانبی";
-            this.BtnSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.BtnSoftwareInstallation.UseVisualStyleBackColor = false;
             this.BtnSoftwareInstallation.Click += new System.EventHandler(this.BtnSoftwareInstallation_Click);
             // 
             // BtnNext
             // 
-            this.BtnNext.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNext.Location = new System.Drawing.Point(568, 15);
+            this.BtnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnNext.BackColor = System.Drawing.Color.Transparent;
+            this.BtnNext.BackgroundImage = global::Installer.Properties.Resources.Group_2170_min;
+            this.BtnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnNext.FlatAppearance.BorderSize = 0;
+            this.BtnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNext.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.BtnNext.ForeColor = System.Drawing.Color.White;
+            this.BtnNext.Location = new System.Drawing.Point(6, 105);
             this.BtnNext.Name = "BtnNext";
-            this.BtnNext.Size = new System.Drawing.Size(75, 23);
+            this.BtnNext.Size = new System.Drawing.Size(80, 35);
             this.BtnNext.TabIndex = 1;
             this.BtnNext.Text = "ادامه";
-            this.BtnNext.UseVisualStyleBackColor = true;
+            this.BtnNext.UseVisualStyleBackColor = false;
             this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // BtnPrevious
             // 
-            this.BtnPrevious.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPrevious.Location = new System.Drawing.Point(487, 15);
+            this.BtnPrevious.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPrevious.BackgroundImage = global::Installer.Properties.Resources.Group_2176_min;
+            this.BtnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnPrevious.FlatAppearance.BorderSize = 0;
+            this.BtnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPrevious.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.BtnPrevious.ForeColor = System.Drawing.Color.White;
+            this.BtnPrevious.Location = new System.Drawing.Point(92, 105);
             this.BtnPrevious.Name = "BtnPrevious";
-            this.BtnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.BtnPrevious.Size = new System.Drawing.Size(80, 35);
             this.BtnPrevious.TabIndex = 2;
             this.BtnPrevious.Text = "بازگشت";
-            this.BtnPrevious.UseVisualStyleBackColor = true;
+            this.BtnPrevious.UseVisualStyleBackColor = false;
             this.BtnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
             // 
             // CheckBxSQLServer2017
@@ -82,10 +101,11 @@
             this.CheckBxSQLServer2017.AutoSize = true;
             this.CheckBxSQLServer2017.Checked = true;
             this.CheckBxSQLServer2017.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBxSQLServer2017.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBxSQLServer2017.Location = new System.Drawing.Point(6, 19);
+            this.CheckBxSQLServer2017.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.CheckBxSQLServer2017.Location = new System.Drawing.Point(665, 20);
             this.CheckBxSQLServer2017.Name = "CheckBxSQLServer2017";
-            this.CheckBxSQLServer2017.Size = new System.Drawing.Size(107, 17);
+            this.CheckBxSQLServer2017.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CheckBxSQLServer2017.Size = new System.Drawing.Size(116, 23);
             this.CheckBxSQLServer2017.TabIndex = 3;
             this.CheckBxSQLServer2017.Text = "SQL Server 2017";
             this.CheckBxSQLServer2017.UseVisualStyleBackColor = true;
@@ -95,10 +115,11 @@
             this.CheckBxIIS.AutoSize = true;
             this.CheckBxIIS.Checked = true;
             this.CheckBxIIS.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBxIIS.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBxIIS.Location = new System.Drawing.Point(6, 42);
+            this.CheckBxIIS.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.CheckBxIIS.Location = new System.Drawing.Point(618, 20);
             this.CheckBxIIS.Name = "CheckBxIIS";
-            this.CheckBxIIS.Size = new System.Drawing.Size(40, 17);
+            this.CheckBxIIS.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CheckBxIIS.Size = new System.Drawing.Size(41, 23);
             this.CheckBxIIS.TabIndex = 4;
             this.CheckBxIIS.Text = "IIS";
             this.CheckBxIIS.UseVisualStyleBackColor = true;
@@ -108,10 +129,11 @@
             this.CheckBxActiveDirectory.AutoSize = true;
             this.CheckBxActiveDirectory.Checked = true;
             this.CheckBxActiveDirectory.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBxActiveDirectory.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBxActiveDirectory.Location = new System.Drawing.Point(6, 65);
+            this.CheckBxActiveDirectory.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.CheckBxActiveDirectory.Location = new System.Drawing.Point(500, 20);
             this.CheckBxActiveDirectory.Name = "CheckBxActiveDirectory";
-            this.CheckBxActiveDirectory.Size = new System.Drawing.Size(103, 17);
+            this.CheckBxActiveDirectory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CheckBxActiveDirectory.Size = new System.Drawing.Size(112, 23);
             this.CheckBxActiveDirectory.TabIndex = 5;
             this.CheckBxActiveDirectory.Text = "Active Directory";
             this.CheckBxActiveDirectory.UseVisualStyleBackColor = true;
@@ -122,10 +144,11 @@
             this.CheckBxKeyA.AutoSize = true;
             this.CheckBxKeyA.Checked = true;
             this.CheckBxKeyA.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBxKeyA.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBxKeyA.Location = new System.Drawing.Point(212, 19);
+            this.CheckBxKeyA.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.CheckBxKeyA.Location = new System.Drawing.Point(337, 20);
             this.CheckBxKeyA.Name = "CheckBxKeyA";
-            this.CheckBxKeyA.Size = new System.Drawing.Size(51, 17);
+            this.CheckBxKeyA.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CheckBxKeyA.Size = new System.Drawing.Size(56, 23);
             this.CheckBxKeyA.TabIndex = 6;
             this.CheckBxKeyA.Text = "KeyA";
             this.CheckBxKeyA.UseVisualStyleBackColor = true;
@@ -135,10 +158,11 @@
             this.CheckBxFlashPlayer.AutoSize = true;
             this.CheckBxFlashPlayer.Checked = true;
             this.CheckBxFlashPlayer.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBxFlashPlayer.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBxFlashPlayer.Location = new System.Drawing.Point(212, 42);
+            this.CheckBxFlashPlayer.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.CheckBxFlashPlayer.Location = new System.Drawing.Point(399, 20);
             this.CheckBxFlashPlayer.Name = "CheckBxFlashPlayer";
-            this.CheckBxFlashPlayer.Size = new System.Drawing.Size(84, 17);
+            this.CheckBxFlashPlayer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CheckBxFlashPlayer.Size = new System.Drawing.Size(95, 23);
             this.CheckBxFlashPlayer.TabIndex = 7;
             this.CheckBxFlashPlayer.Text = "Flash Player";
             this.CheckBxFlashPlayer.UseVisualStyleBackColor = true;
@@ -148,17 +172,23 @@
             this.CheckBxKasraPrintService.AutoSize = true;
             this.CheckBxKasraPrintService.Checked = true;
             this.CheckBxKasraPrintService.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBxKasraPrintService.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBxKasraPrintService.Location = new System.Drawing.Point(212, 65);
+            this.CheckBxKasraPrintService.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.CheckBxKasraPrintService.Location = new System.Drawing.Point(200, 20);
             this.CheckBxKasraPrintService.Name = "CheckBxKasraPrintService";
-            this.CheckBxKasraPrintService.Size = new System.Drawing.Size(116, 17);
+            this.CheckBxKasraPrintService.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CheckBxKasraPrintService.Size = new System.Drawing.Size(130, 23);
             this.CheckBxKasraPrintService.TabIndex = 8;
             this.CheckBxKasraPrintService.Text = "Kasra Print Service";
             this.CheckBxKasraPrintService.UseVisualStyleBackColor = true;
             // 
             // GroupBx1
             // 
-            this.GroupBx1.Controls.Add(this.GroupBx2);
+            this.GroupBx1.Controls.Add(this.CheckBxKasraPrintService);
+            this.GroupBx1.Controls.Add(this.CheckBxSQLServer2017);
+            this.GroupBx1.Controls.Add(this.CheckBxKeyA);
+            this.GroupBx1.Controls.Add(this.CheckBxFlashPlayer);
+            this.GroupBx1.Controls.Add(this.CheckBxIIS);
+            this.GroupBx1.Controls.Add(this.CheckBxActiveDirectory);
             this.GroupBx1.Controls.Add(this.BtnSoftwareInstallation);
             this.GroupBx1.Controls.Add(this.BtnNext);
             this.GroupBx1.Controls.Add(this.BtnPrevious);
@@ -167,20 +197,6 @@
             this.GroupBx1.Size = new System.Drawing.Size(788, 175);
             this.GroupBx1.TabIndex = 9;
             this.GroupBx1.TabStop = false;
-            // 
-            // GroupBx2
-            // 
-            this.GroupBx2.Controls.Add(this.CheckBxSQLServer2017);
-            this.GroupBx2.Controls.Add(this.CheckBxKasraPrintService);
-            this.GroupBx2.Controls.Add(this.CheckBxIIS);
-            this.GroupBx2.Controls.Add(this.CheckBxFlashPlayer);
-            this.GroupBx2.Controls.Add(this.CheckBxActiveDirectory);
-            this.GroupBx2.Controls.Add(this.CheckBxKeyA);
-            this.GroupBx2.Location = new System.Drawing.Point(31, 51);
-            this.GroupBx2.Name = "GroupBx2";
-            this.GroupBx2.Size = new System.Drawing.Size(335, 101);
-            this.GroupBx2.TabIndex = 3;
-            this.GroupBx2.TabStop = false;
             // 
             // TxtBxLog
             // 
@@ -208,8 +224,7 @@
             this.Text = "نصب نرم افزارهای جانبی";
             this.Load += new System.EventHandler(this.FrmFeaturesInstallation_Load);
             this.GroupBx1.ResumeLayout(false);
-            this.GroupBx2.ResumeLayout(false);
-            this.GroupBx2.PerformLayout();
+            this.GroupBx1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,7 +242,6 @@
         private System.Windows.Forms.CheckBox CheckBxFlashPlayer;
         private System.Windows.Forms.CheckBox CheckBxKasraPrintService;
         private System.Windows.Forms.GroupBox GroupBx1;
-        private System.Windows.Forms.GroupBox GroupBx2;
         private System.Windows.Forms.TextBox TxtBxLog;
     }
 }

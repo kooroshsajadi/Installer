@@ -82,7 +82,7 @@
             this.GroupBxApplication.Controls.Add(this.LbProjectPath);
             this.GroupBxApplication.Controls.Add(this.LbPort);
             this.GroupBxApplication.Controls.Add(this.LbSiteName);
-            this.GroupBxApplication.Location = new System.Drawing.Point(12, 41);
+            this.GroupBxApplication.Location = new System.Drawing.Point(12, 12);
             this.GroupBxApplication.Name = "GroupBxApplication";
             this.GroupBxApplication.Size = new System.Drawing.Size(776, 100);
             this.GroupBxApplication.TabIndex = 0;
@@ -108,57 +108,76 @@
             // 
             // BtnProjectPathBrowser
             // 
-            this.BtnProjectPathBrowser.Location = new System.Drawing.Point(445, 55);
+            this.BtnProjectPathBrowser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnProjectPathBrowser.BackColor = System.Drawing.Color.Transparent;
+            this.BtnProjectPathBrowser.BackgroundImage = global::Installer.Properties.Resources.Group_2193_min;
+            this.BtnProjectPathBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnProjectPathBrowser.FlatAppearance.BorderSize = 0;
+            this.BtnProjectPathBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnProjectPathBrowser.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.BtnProjectPathBrowser.ForeColor = System.Drawing.Color.White;
+            this.BtnProjectPathBrowser.Location = new System.Drawing.Point(340, 52);
             this.BtnProjectPathBrowser.Name = "BtnProjectPathBrowser";
-            this.BtnProjectPathBrowser.Size = new System.Drawing.Size(27, 22);
+            this.BtnProjectPathBrowser.Size = new System.Drawing.Size(80, 35);
             this.BtnProjectPathBrowser.TabIndex = 2;
-            this.BtnProjectPathBrowser.Text = "...";
+            this.BtnProjectPathBrowser.Text = "انتخاب";
             this.BtnProjectPathBrowser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProjectPathBrowser.UseVisualStyleBackColor = true;
+            this.BtnProjectPathBrowser.UseVisualStyleBackColor = false;
             this.BtnProjectPathBrowser.Click += new System.EventHandler(this.BtnProjectPathBrowser_Click);
             // 
             // TxtBxProjectPath
             // 
-            this.TxtBxProjectPath.Location = new System.Drawing.Point(479, 55);
+            this.TxtBxProjectPath.Location = new System.Drawing.Point(426, 56);
             this.TxtBxProjectPath.Name = "TxtBxProjectPath";
             this.TxtBxProjectPath.ReadOnly = true;
-            this.TxtBxProjectPath.Size = new System.Drawing.Size(218, 21);
+            this.TxtBxProjectPath.Size = new System.Drawing.Size(252, 21);
             this.TxtBxProjectPath.TabIndex = 2;
             this.TxtBxProjectPath.TextChanged += new System.EventHandler(this.TxtBxProjectPath_TextChanged);
             // 
             // LbNote
             // 
+            this.LbNote.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LbNote.AutoSize = true;
-            this.LbNote.Location = new System.Drawing.Point(418, 80);
+            this.LbNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LbNote.Font = new System.Drawing.Font("Vazir", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.LbNote.Location = new System.Drawing.Point(423, 80);
             this.LbNote.Name = "LbNote";
-            this.LbNote.Size = new System.Drawing.Size(288, 13);
+            this.LbNote.Size = new System.Drawing.Size(259, 15);
             this.LbNote.TabIndex = 4;
-            this.LbNote.Text = ".را انتخاب کنید C در این قسمت فقط درایو مورد نظر به جز درایو ";
+            this.LbNote.Text = ".را انتخاب نمایید C در این قسمت نام درایو مورد نظر به جز درایو ";
             // 
             // LbProjectPath
             // 
+            this.LbProjectPath.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LbProjectPath.AutoSize = true;
-            this.LbProjectPath.Location = new System.Drawing.Point(711, 58);
+            this.LbProjectPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LbProjectPath.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.LbProjectPath.Location = new System.Drawing.Point(684, 56);
             this.LbProjectPath.Name = "LbProjectPath";
-            this.LbProjectPath.Size = new System.Drawing.Size(59, 13);
+            this.LbProjectPath.Size = new System.Drawing.Size(86, 19);
             this.LbProjectPath.TabIndex = 1;
-            this.LbProjectPath.Text = "مسیر پروژه";
+            this.LbProjectPath.Text = "مسیر درایو پروژه";
             // 
             // LbPort
             // 
+            this.LbPort.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LbPort.AutoSize = true;
+            this.LbPort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LbPort.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.LbPort.Location = new System.Drawing.Point(542, 17);
             this.LbPort.Name = "LbPort";
-            this.LbPort.Size = new System.Drawing.Size(28, 13);
+            this.LbPort.Size = new System.Drawing.Size(33, 19);
             this.LbPort.TabIndex = 1;
             this.LbPort.Text = "پورت";
             // 
             // LbSiteName
             // 
             this.LbSiteName.AutoSize = true;
+            this.LbSiteName.BackColor = System.Drawing.Color.Transparent;
+            this.LbSiteName.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.LbSiteName.Location = new System.Drawing.Point(711, 17);
             this.LbSiteName.Name = "LbSiteName";
-            this.LbSiteName.Size = new System.Drawing.Size(59, 13);
+            this.LbSiteName.Size = new System.Drawing.Size(59, 19);
             this.LbSiteName.TabIndex = 1;
             this.LbSiteName.Text = "اسم سایت";
             // 
@@ -166,7 +185,7 @@
             // 
             this.GroupBxModuleSelection.Controls.Add(this.checkBxWebServer);
             this.GroupBxModuleSelection.Controls.Add(this.CkeckBxRestaurant);
-            this.GroupBxModuleSelection.Location = new System.Drawing.Point(12, 438);
+            this.GroupBxModuleSelection.Location = new System.Drawing.Point(12, 409);
             this.GroupBxModuleSelection.Name = "GroupBxModuleSelection";
             this.GroupBxModuleSelection.Size = new System.Drawing.Size(776, 57);
             this.GroupBxModuleSelection.TabIndex = 2;
@@ -195,49 +214,67 @@
             // 
             // BtnInstallSoftware
             // 
+            this.BtnInstallSoftware.BackColor = System.Drawing.Color.Transparent;
+            this.BtnInstallSoftware.BackgroundImage = global::Installer.Properties.Resources.Group_2170_min;
+            this.BtnInstallSoftware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnInstallSoftware.Enabled = false;
-            this.BtnInstallSoftware.Location = new System.Drawing.Point(709, 12);
+            this.BtnInstallSoftware.FlatAppearance.BorderSize = 0;
+            this.BtnInstallSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInstallSoftware.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.BtnInstallSoftware.ForeColor = System.Drawing.Color.White;
+            this.BtnInstallSoftware.Location = new System.Drawing.Point(12, 472);
             this.BtnInstallSoftware.Name = "BtnInstallSoftware";
-            this.BtnInstallSoftware.Size = new System.Drawing.Size(79, 23);
+            this.BtnInstallSoftware.Size = new System.Drawing.Size(89, 35);
             this.BtnInstallSoftware.TabIndex = 3;
             this.BtnInstallSoftware.Text = "نصب نرم افزار";
-            this.BtnInstallSoftware.UseVisualStyleBackColor = true;
+            this.BtnInstallSoftware.UseVisualStyleBackColor = false;
             this.BtnInstallSoftware.Click += new System.EventHandler(this.BtnInstallSoftware_Click);
             // 
             // BtnPrevious
             // 
-            this.BtnPrevious.Location = new System.Drawing.Point(609, 12);
+            this.BtnPrevious.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPrevious.BackgroundImage = global::Installer.Properties.Resources.Group_2176_min;
+            this.BtnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnPrevious.FlatAppearance.BorderSize = 0;
+            this.BtnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPrevious.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.BtnPrevious.ForeColor = System.Drawing.Color.White;
+            this.BtnPrevious.Location = new System.Drawing.Point(107, 472);
             this.BtnPrevious.Name = "BtnPrevious";
-            this.BtnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.BtnPrevious.Size = new System.Drawing.Size(89, 35);
             this.BtnPrevious.TabIndex = 4;
             this.BtnPrevious.Text = "بازگشت";
-            this.BtnPrevious.UseVisualStyleBackColor = true;
+            this.BtnPrevious.UseVisualStyleBackColor = false;
             this.BtnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
             // 
             // LbBankName
             // 
             this.LbBankName.AutoSize = true;
+            this.LbBankName.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.LbBankName.Location = new System.Drawing.Point(727, 17);
             this.LbBankName.Name = "LbBankName";
-            this.LbBankName.Size = new System.Drawing.Size(43, 13);
+            this.LbBankName.Size = new System.Drawing.Size(48, 19);
             this.LbBankName.TabIndex = 0;
             this.LbBankName.Text = "نام بانک";
             // 
             // LbInstanceName
             // 
             this.LbInstanceName.AutoSize = true;
+            this.LbInstanceName.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.LbInstanceName.Location = new System.Drawing.Point(503, 17);
             this.LbInstanceName.Name = "LbInstanceName";
-            this.LbInstanceName.Size = new System.Drawing.Size(67, 13);
+            this.LbInstanceName.Size = new System.Drawing.Size(70, 19);
             this.LbInstanceName.TabIndex = 1;
             this.LbInstanceName.Text = "نام اینستنس";
             // 
             // LbBankUsername
             // 
             this.LbBankUsername.AutoSize = true;
-            this.LbBankUsername.Location = new System.Drawing.Point(747, 52);
+            this.LbBankUsername.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.LbBankUsername.Location = new System.Drawing.Point(742, 48);
             this.LbBankUsername.Name = "LbBankUsername";
-            this.LbBankUsername.Size = new System.Drawing.Size(23, 13);
+            this.LbBankUsername.Size = new System.Drawing.Size(28, 19);
             this.LbBankUsername.TabIndex = 2;
             this.LbBankUsername.Text = "یوزر";
             // 
@@ -253,9 +290,10 @@
             // LbInstanceUsername
             // 
             this.LbInstanceUsername.AutoSize = true;
+            this.LbInstanceUsername.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.LbInstanceUsername.Location = new System.Drawing.Point(534, 49);
             this.LbInstanceUsername.Name = "LbInstanceUsername";
-            this.LbInstanceUsername.Size = new System.Drawing.Size(36, 13);
+            this.LbInstanceUsername.Size = new System.Drawing.Size(38, 19);
             this.LbInstanceUsername.TabIndex = 3;
             this.LbInstanceUsername.Text = "پسورد";
             // 
@@ -351,7 +389,7 @@
             this.GroupBxSQLServer.Controls.Add(this.LbBankUsername);
             this.GroupBxSQLServer.Controls.Add(this.LbInstanceName);
             this.GroupBxSQLServer.Controls.Add(this.LbBankName);
-            this.GroupBxSQLServer.Location = new System.Drawing.Point(12, 147);
+            this.GroupBxSQLServer.Location = new System.Drawing.Point(12, 118);
             this.GroupBxSQLServer.Name = "GroupBxSQLServer";
             this.GroupBxSQLServer.Size = new System.Drawing.Size(776, 285);
             this.GroupBxSQLServer.TabIndex = 1;
@@ -393,12 +431,20 @@
             // 
             // BtnVerification
             // 
+            this.BtnVerification.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnVerification.BackColor = System.Drawing.Color.Transparent;
+            this.BtnVerification.BackgroundImage = global::Installer.Properties.Resources.Group_2169_min;
+            this.BtnVerification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnVerification.FlatAppearance.BorderSize = 0;
+            this.BtnVerification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVerification.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.BtnVerification.ForeColor = System.Drawing.Color.White;
             this.BtnVerification.Location = new System.Drawing.Point(220, 79);
             this.BtnVerification.Name = "BtnVerification";
-            this.BtnVerification.Size = new System.Drawing.Size(75, 23);
+            this.BtnVerification.Size = new System.Drawing.Size(80, 35);
             this.BtnVerification.TabIndex = 4;
-            this.BtnVerification.Text = "Verify";
-            this.BtnVerification.UseVisualStyleBackColor = true;
+            this.BtnVerification.Text = "بررسی";
+            this.BtnVerification.UseVisualStyleBackColor = false;
             this.BtnVerification.Click += new System.EventHandler(this.BtnVerification_Click);
             // 
             // TxtBxWebServerPassword
@@ -460,9 +506,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 507);
             this.Controls.Add(this.BtnPrevious);
-            this.Controls.Add(this.BtnInstallSoftware);
             this.Controls.Add(this.GroupBxModuleSelection);
             this.Controls.Add(this.GroupBxSQLServer);
+            this.Controls.Add(this.BtnInstallSoftware);
             this.Controls.Add(this.GroupBxApplication);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

@@ -101,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -118,6 +119,60 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ScriptsForInstaller\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2172-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle_green-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2169%402x-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2169-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2170%402x-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2170-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2176%402x-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2176-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2192%402x-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2192-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2193%402x-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2193-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2205%402x-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2205-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2207%402x-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2207-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2171%402x-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 2171-min.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

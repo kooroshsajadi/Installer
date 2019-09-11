@@ -179,5 +179,10 @@ namespace Installer
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FrmPrerequisites_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

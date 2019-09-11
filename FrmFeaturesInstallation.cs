@@ -56,7 +56,7 @@ namespace Installer
 
                 // Change the attribute which determines whether the IIS got installed using the app or not.
                 // The purpose is to transfer the value to the last form.
-                // In the last form it is asked if the user wants a restart wright now when IIS is installed completely.
+                // In the last form if the IIS got installed a message will get prompted to ask whether the user wants an immediate restart or not.
                 frmInstallAndSetUpSystem.IISInstalled = IISInstalled;
 
                 frmInstallAndSetUpSystem.Show();
