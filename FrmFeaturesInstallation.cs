@@ -25,6 +25,8 @@ namespace Installer
             PublishPath = publishPath;
             InitializeComponent();
         }
+        // This property is defined in order to save whether the IIS got installed or not using the installer.
+        public bool IISInstalled { set; get; }
 
         private void FrmFeaturesInstallation_Load(object sender, EventArgs e)
         {
@@ -51,6 +53,12 @@ namespace Installer
             try
             {
                 FrmInstallAndSetUpSystem frmInstallAndSetUpSystem = new FrmInstallAndSetUpSystem(PublishPath);
+
+                // Change the attribute which determines whether the IIS got installed using the app or not.
+                // The purpose is to transfer the value to the last form.
+                // In the last form it is asked if the user wants a restart wright now when IIS is installed completely.
+                frmInstallAndSetUpSystem.IISInstalled = IISInstalled;
+
                 frmInstallAndSetUpSystem.Show();
                 Hide();
             }
@@ -70,7 +78,10 @@ namespace Installer
                 {
                     Installation installation = new Installation(this);
                     if (CheckBxIIS.Checked)
+                    {
                         installation.InstallIISAndLog();
+                        IISInstalled = true;
+                    }
                     if (CheckBxKeyA.Checked)
                         installation.InstallKeyAAndLog();
                     if (CheckBxKasraPrintService.Checked)

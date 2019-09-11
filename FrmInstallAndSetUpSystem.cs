@@ -76,6 +76,7 @@ namespace Installer
             PublishPath = publishPath;
             InitializeComponent();
         }
+        public bool IISInstalled { set; get; }
 
         private void FrmInstallAndSetUpSystem_Load(object sender, EventArgs e)
         {
@@ -105,9 +106,17 @@ namespace Installer
                 if (verificationMessage.Equals(string.Empty))
                 {
                     FrmSoftwareInstallation frmSoftwareInstallationObj = new FrmSoftwareInstallation(PublishPath, TxtBxWebsiteName.Text, TxtBxPortNumber.Text, TxtBxProjectPath.Text, TxtBxMDFPath.Text, TxtBxLDFPath.Text, TxtBxBackupPath.Text, TxtBxDatabaseName.Text, TxtBxDatabaseInstanceName.Text, TxtBxDataBaseUsername.Text, TxtBxDatabasePassword.Text);
+
+                    // If the restaurant service is checked then set its corresponding value in the next form to true.
                     frmSoftwareInstallationObj.RestaurantCheckBox = CkeckBxRestaurant.Checked ? true : false;
+
+                    // If the web service is checked then set its corresponding value in the next form to true.
                     frmSoftwareInstallationObj.WebServiceCheckBox = checkBxWebServer.Checked ? true : false;
-                    frmSoftwareInstallationObj.WebServerDatabaseCheckBox = CheckBxWebServerDatabase.Checked ? true : false;
+
+                    // Transfer the value that defines whether IIS got installed in the second form or not.
+                    // Note that a full IIS installation needs a restart.
+                    frmSoftwareInstallationObj.IISInstalled = IISInstalled;
+
                     frmSoftwareInstallationObj.Show();
                     Hide();
                 }

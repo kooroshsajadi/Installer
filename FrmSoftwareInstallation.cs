@@ -35,6 +35,7 @@ namespace Installer
                 }, value);
             }
         }
+        public bool IISInstalled { set; get; }
         public string TextAppend
         {
             set
@@ -78,24 +79,24 @@ namespace Installer
                     
                     FileManager fileMngObj = new FileManager(this);
 
-                    fileMngObj.CreateKasraDirectory();
-                    fileMngObj.CreateAutoBackupDirectory();
-                    fileMngObj.RestoreDatabase();
+                    //fileMngObj.CreateKasraDirectory();
+                    //fileMngObj.CreateAutoBackupDirectory();
+                    //fileMngObj.RestoreDatabase();
 
                     // Copy the essential files into the project folder in order to configure the website.
-                    fileMngObj.CopyAndLog();
+                    //fileMngObj.CopyAndLog();
 
-                    Installation installation = new Installation(this);
-                    installation.ConfigureWebsite();
+                    //Installation installation = new Installation(this);
+                    //installation.ConfigureWebsite();
 
                     // Log that the site configuration was a success.
                     TextAppend = "\r\n\r\n" + DateTime.Now + "\r\nسایت با موفقیت ساخته شد.";
 
                     // Save the log in a physical path. Method 'SaveLog' is static.
-                    string logFileName = "log2";
-                    string storagePath = ProjectPath + @"Kasra\Project\" + WebsiteName;
-                    string log = TxtBxLog.Text;
-                    FileManager.SaveLog(logFileName, storagePath, log);
+                    //string logFileName = "log2";
+                    //string storagePath = ProjectPath + @"Kasra\Project\" + WebsiteName;
+                    //string log = TxtBxLog.Text;
+                    //FileManager.SaveLog(logFileName, storagePath, log);
 
                     MessageBox.Show("." + "فرایند نصب با موفقیت تکمیل شد");
                 });
@@ -115,9 +116,14 @@ namespace Installer
         {
             // Show a message box to ask whether to restart the system or not.
             // Restart it on button click YES. Otherwise close the program.
-            if (MessageBox.Show("دارید" + "؟" + " restart " + "آیا تمایل به ", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (IISInstalled)
             {
-                System.Diagnostics.Process.Start("ShutDown", "/r");
+                if (MessageBox.Show(  "؟" + " دارید " + " restart " + " آیا تمایل به  " + "." + " کامل بر روی سیستم شما نصب شد " + " IIS" + "سرویس ", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("ShutDown", "/r");
+                }
+                else
+                    Close();
             }
             else
                 Close();
