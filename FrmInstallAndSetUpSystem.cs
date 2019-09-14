@@ -223,14 +223,18 @@ namespace Installer
         {
             if (CheckBxWebServerDatabase.Checked)
             {
+                LbWebServerUsername.Enabled = true;
                 TxtBxWebServerUsername.Enabled = true;
+                LbWebServerPassword.Enabled = true;
                 TxtBxWebServerPassword.Enabled = true;
             }
             else
             {
+                LbWebServerUsername.Enabled = false;
                 TxtBxWebServerUsername.Text = string.Empty;
-                TxtBxWebServerPassword.Text = string.Empty;
                 TxtBxWebServerUsername.Enabled = false;
+                LbWebServerPassword.Enabled = false;
+                TxtBxWebServerPassword.Text = string.Empty;
                 TxtBxWebServerPassword.Enabled = false;
             }
         }

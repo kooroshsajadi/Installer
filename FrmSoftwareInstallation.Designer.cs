@@ -31,7 +31,6 @@
             this.ProgressBar = new System.Windows.Forms.ProgressBar();
             this.TxtBxLog = new System.Windows.Forms.TextBox();
             this.GroupBx = new System.Windows.Forms.GroupBox();
-            this.BtnExit = new System.Windows.Forms.Button();
             this.GroupBx.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +61,6 @@
             // 
             // GroupBx
             // 
-            this.GroupBx.Controls.Add(this.BtnExit);
             this.GroupBx.Controls.Add(this.ProgressBar);
             this.GroupBx.Controls.Add(this.TxtBxLog);
             this.GroupBx.Location = new System.Drawing.Point(2, 4);
@@ -70,17 +68,6 @@
             this.GroupBx.Size = new System.Drawing.Size(796, 434);
             this.GroupBx.TabIndex = 3;
             this.GroupBx.TabStop = false;
-            // 
-            // BtnExit
-            // 
-            this.BtnExit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExit.Location = new System.Drawing.Point(10, 405);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(75, 23);
-            this.BtnExit.TabIndex = 3;
-            this.BtnExit.Text = "خروج";
-            this.BtnExit.UseVisualStyleBackColor = true;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // FrmSoftwareInstallation
             // 
@@ -104,6 +91,5 @@
         private System.Windows.Forms.ProgressBar ProgressBar;
         private System.Windows.Forms.TextBox TxtBxLog;
         private System.Windows.Forms.GroupBox GroupBx;
-        private System.Windows.Forms.Button BtnExit;
     }
 }

@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBx1 = new System.Windows.Forms.GroupBox();
             this.TxtBxPublishPath = new System.Windows.Forms.TextBox();
+            this.BtnBrowse = new System.Windows.Forms.Button();
             this.LbPublishPath = new System.Windows.Forms.Label();
+            this.BtnHelpPrequisites = new System.Windows.Forms.Button();
+            this.BtnSystemInformation = new System.Windows.Forms.Button();
+            this.BtnPrequisitesDiag = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColPrerequisite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDiscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnRerun = new System.Windows.Forms.Button();
-            this.BtnBrowse = new System.Windows.Forms.Button();
-            this.BtnHelpPrequisites = new System.Windows.Forms.Button();
-            this.BtnSystemInformation = new System.Windows.Forms.Button();
-            this.BtnPrequisitesDiag = new System.Windows.Forms.Button();
             this.BtnNext = new System.Windows.Forms.Button();
             this.GroupBx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -77,105 +77,6 @@
             this.TxtBxPublishPath.Size = new System.Drawing.Size(203, 26);
             this.TxtBxPublishPath.TabIndex = 6;
             // 
-            // LbPublishPath
-            // 
-            this.LbPublishPath.AutoSize = true;
-            this.LbPublishPath.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.LbPublishPath.Location = new System.Drawing.Point(713, 99);
-            this.LbPublishPath.Name = "LbPublishPath";
-            this.LbPublishPath.Size = new System.Drawing.Size(74, 19);
-            this.LbPublishPath.TabIndex = 5;
-            this.LbPublishPath.Text = " مسیر پابلیش";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColStatus,
-            this.ColPrerequisite,
-            this.ColDiscription});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.HotTrack;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 165);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 233);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // ColStatus
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = false;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColStatus.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColStatus.FillWeight = 24.46675F;
-            this.ColStatus.HeaderText = "وضعیت";
-            this.ColStatus.Name = "ColStatus";
-            this.ColStatus.ReadOnly = true;
-            this.ColStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColPrerequisite
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColPrerequisite.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColPrerequisite.FillWeight = 98.65928F;
-            this.ColPrerequisite.HeaderText = "پیش نیاز";
-            this.ColPrerequisite.Name = "ColPrerequisite";
-            this.ColPrerequisite.ReadOnly = true;
-            this.ColPrerequisite.Width = 300;
-            // 
-            // ColDiscription
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColDiscription.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColDiscription.FillWeight = 176.8739F;
-            this.ColDiscription.HeaderText = "توضیحات";
-            this.ColDiscription.Name = "ColDiscription";
-            this.ColDiscription.ReadOnly = true;
-            this.ColDiscription.Width = 300;
-            // 
-            // BtnRerun
-            // 
-            this.BtnRerun.Enabled = false;
-            this.BtnRerun.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRerun.Location = new System.Drawing.Point(697, 415);
-            this.BtnRerun.Name = "BtnRerun";
-            this.BtnRerun.Size = new System.Drawing.Size(90, 23);
-            this.BtnRerun.TabIndex = 1;
-            this.BtnRerun.Text = "بررسی مجدد";
-            this.BtnRerun.UseVisualStyleBackColor = true;
-            this.BtnRerun.Click += new System.EventHandler(this.BtnRerun_Click);
-            // 
             // BtnBrowse
             // 
             this.BtnBrowse.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -194,6 +95,16 @@
             this.BtnBrowse.Text = "انتخاب";
             this.BtnBrowse.UseVisualStyleBackColor = false;
             this.BtnBrowse.Click += new System.EventHandler(this.BtnBrowse_Click);
+            // 
+            // LbPublishPath
+            // 
+            this.LbPublishPath.AutoSize = true;
+            this.LbPublishPath.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.LbPublishPath.Location = new System.Drawing.Point(713, 99);
+            this.LbPublishPath.Name = "LbPublishPath";
+            this.LbPublishPath.Size = new System.Drawing.Size(74, 19);
+            this.LbPublishPath.TabIndex = 5;
+            this.LbPublishPath.Text = " مسیر پابلیش";
             // 
             // BtnHelpPrequisites
             // 
@@ -250,6 +161,103 @@
             this.BtnPrequisitesDiag.UseVisualStyleBackColor = false;
             this.BtnPrequisitesDiag.Click += new System.EventHandler(this.BtnPrequisitesDiag_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColStatus,
+            this.ColPrerequisite,
+            this.ColDiscription});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.HotTrack;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 165);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 233);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // ColStatus
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.NullValue = false;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColStatus.DefaultCellStyle = dataGridViewCellStyle12;
+            this.ColStatus.FillWeight = 24.46675F;
+            this.ColStatus.HeaderText = "وضعیت";
+            this.ColStatus.Name = "ColStatus";
+            this.ColStatus.ReadOnly = true;
+            this.ColStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColPrerequisite
+            // 
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColPrerequisite.DefaultCellStyle = dataGridViewCellStyle13;
+            this.ColPrerequisite.FillWeight = 98.65928F;
+            this.ColPrerequisite.HeaderText = "پیش نیاز";
+            this.ColPrerequisite.Name = "ColPrerequisite";
+            this.ColPrerequisite.ReadOnly = true;
+            this.ColPrerequisite.Width = 300;
+            // 
+            // ColDiscription
+            // 
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColDiscription.DefaultCellStyle = dataGridViewCellStyle14;
+            this.ColDiscription.FillWeight = 176.8739F;
+            this.ColDiscription.HeaderText = "توضیحات";
+            this.ColDiscription.Name = "ColDiscription";
+            this.ColDiscription.ReadOnly = true;
+            this.ColDiscription.Width = 300;
+            // 
+            // BtnRerun
+            // 
+            this.BtnRerun.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnRerun.BackColor = System.Drawing.Color.Transparent;
+            this.BtnRerun.BackgroundImage = global::Installer.Properties.Resources.Group_2169_min;
+            this.BtnRerun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnRerun.Enabled = false;
+            this.BtnRerun.FlatAppearance.BorderSize = 0;
+            this.BtnRerun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRerun.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.BtnRerun.ForeColor = System.Drawing.Color.White;
+            this.BtnRerun.Location = new System.Drawing.Point(98, 413);
+            this.BtnRerun.Name = "BtnRerun";
+            this.BtnRerun.Size = new System.Drawing.Size(90, 30);
+            this.BtnRerun.TabIndex = 1;
+            this.BtnRerun.Text = "بررسی مجدد";
+            this.BtnRerun.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnRerun.UseVisualStyleBackColor = false;
+            this.BtnRerun.Click += new System.EventHandler(this.BtnRerun_Click);
+            // 
             // BtnNext
             // 
             this.BtnNext.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -262,7 +270,7 @@
             this.BtnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNext.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnNext.ForeColor = System.Drawing.Color.White;
-            this.BtnNext.Location = new System.Drawing.Point(31, 412);
+            this.BtnNext.Location = new System.Drawing.Point(12, 413);
             this.BtnNext.Name = "BtnNext";
             this.BtnNext.Size = new System.Drawing.Size(80, 30);
             this.BtnNext.TabIndex = 4;
