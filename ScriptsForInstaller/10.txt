@@ -1,0 +1,2 @@
+EXEC
+master..sp_addsrvrolemember @loginame = N'kasra', @rolename = N'securityadmin'

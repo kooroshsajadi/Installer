@@ -19,6 +19,16 @@ namespace Installer
                 }, value);
             }
         }
+        public bool DisableBtnSoftwareInstallation
+        {
+            set
+            {
+                synchronizationContext.Post(o =>
+                {
+                    BtnSoftwareInstallation.Enabled = false;
+                }, value);
+            }
+        }
         public string PublishPath { set; get; }
         public FrmFeaturesInstallation(string publishPath)
         {
@@ -86,12 +96,15 @@ namespace Installer
                         installation.InstallKeyAAndLog();
                     if (CheckBxKasraPrintService.Checked)
                         installation.InstallKasraPrintServiceAndLog();
+                    if (CheckBxFlashPlayer.Checked)
+                        installation.InstallFlashPlayerAndLog();
+
                     // Save the log in a physical path. Method 'SaveLog' is static.
-                    string logFileName = "log1";
+                    string logFileName = "PrerequisitesLog";
                     string storagePath = PublishPath + @"\App";
                     string log = TxtBxLog.Text;
                     FileManager.SaveLog(logFileName, storagePath, log);
-                    BtnSoftwareInstallation.Enabled = false;
+                    DisableBtnSoftwareInstallation = false;
                     MessageBox.Show("." + "فرایند نصب با موفقیت کامل شد");
                 });
             }

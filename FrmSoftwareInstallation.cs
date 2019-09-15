@@ -72,27 +72,28 @@ namespace Installer
             try
             {
                 synchronizationContext = SynchronizationContext.Current;
-                TxtBxLog.AppendText("در حال ساختن فولدر های لازم...\r\n\r\n");
                 Task.Run(() =>
                 {
                     
                     FileManager fileMngObj = new FileManager(this);
 
-                    fileMngObj.CreateKasraDirectory();
+                    //fileMngObj.CreateKasraDirectory();
                     fileMngObj.CreateAutoBackupDirectory();
+                    TextAppend = "در حال restore کردن دیتابیس...\r\n\r\n";
                     fileMngObj.RestoreDatabase();
-
+                    TextAppend = "پایان فرایند restore کردن دیتابیس\r\n\r\n";
+                    TextAppend = "در حال ساختن فولدر های لازم...\r\n\r\n";
                     // Copy the essential files into the project folder in order to configure the website.
-                    fileMngObj.CopyAndLog();
+                    //fileMngObj.CopyAndLog();
 
                     Installation installation = new Installation(this);
                     installation.ConfigureWebsite();
 
                     // Log that the site configuration was a success.
-                    TextAppend = "\r\n\r\n" + DateTime.Now + "\r\nسایت با موفقیت ساخته شد.";
+                    TextAppend = DateTime.Now + "\r\nسایت با موفقیت ساخته شد.";
 
                     // Save the log in a physical path. Method 'SaveLog' is static.
-                    string logFileName = "log2";
+                    string logFileName = "WebsiteInstallatinLog";
                     string storagePath = ProjectPath + @"Kasra\Project\" + WebsiteName;
                     string log = TxtBxLog.Text;
                     FileManager.SaveLog(logFileName, storagePath, log);
@@ -100,15 +101,15 @@ namespace Installer
                     // Show a message box to show that the installation process completed.
                     // If IIS was installed during the execution then the user will be 
                     // prompted to decide whether to restart immediately or not.
-                    if (IISInstalled)
+                    if (!IISInstalled || IISInstalled.Equals(null))
                     {
-                        if (MessageBox.Show("؟" + " دارید " + " restart " + " آیا اکنون تمایل به  " + "." + "  بر روی سیستم شما نصب گردید " + " IIS" + "سرویس " + "و" + "فرایند نصب با موفقیت تکمیل شد ", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        MessageBox.Show("." + "فرایند نصب با موفقیت تکمیل شد");
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("؟" + " دارید " + " restart " + " آیا اکنون تمایل به", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             System.Diagnostics.Process.Start("ShutDown", "/r");
-                        }
-                        else
-                        {
-                            MessageBox.Show("." + "فرایند نصب با موفقیت تکمیل شد");
                         }
                     }
                 });

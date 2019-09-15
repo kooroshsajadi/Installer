@@ -48,7 +48,10 @@
             this.BtnSoftwareInstallation.BackColor = System.Drawing.Color.Transparent;
             this.BtnSoftwareInstallation.BackgroundImage = global::Installer.Properties.Resources.Group_2169_2x_min;
             this.BtnSoftwareInstallation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSoftwareInstallation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSoftwareInstallation.FlatAppearance.BorderSize = 0;
+            this.BtnSoftwareInstallation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnSoftwareInstallation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnSoftwareInstallation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSoftwareInstallation.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnSoftwareInstallation.ForeColor = System.Drawing.Color.White;
@@ -66,7 +69,10 @@
             this.BtnNext.BackColor = System.Drawing.Color.Transparent;
             this.BtnNext.BackgroundImage = global::Installer.Properties.Resources.Group_2170_min;
             this.BtnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnNext.FlatAppearance.BorderSize = 0;
+            this.BtnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNext.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnNext.ForeColor = System.Drawing.Color.White;
@@ -84,7 +90,10 @@
             this.BtnPrevious.BackColor = System.Drawing.Color.Transparent;
             this.BtnPrevious.BackgroundImage = global::Installer.Properties.Resources.Group_2176_min;
             this.BtnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPrevious.FlatAppearance.BorderSize = 0;
+            this.BtnPrevious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPrevious.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnPrevious.ForeColor = System.Drawing.Color.White;
@@ -102,13 +111,14 @@
             this.CheckBxSQLServer2017.Checked = true;
             this.CheckBxSQLServer2017.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBxSQLServer2017.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.CheckBxSQLServer2017.Location = new System.Drawing.Point(665, 20);
+            this.CheckBxSQLServer2017.Location = new System.Drawing.Point(201, 20);
             this.CheckBxSQLServer2017.Name = "CheckBxSQLServer2017";
             this.CheckBxSQLServer2017.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CheckBxSQLServer2017.Size = new System.Drawing.Size(116, 23);
             this.CheckBxSQLServer2017.TabIndex = 3;
             this.CheckBxSQLServer2017.Text = "SQL Server 2017";
             this.CheckBxSQLServer2017.UseVisualStyleBackColor = true;
+            this.CheckBxSQLServer2017.Visible = false;
             // 
             // CheckBxIIS
             // 
@@ -116,7 +126,7 @@
             this.CheckBxIIS.Checked = true;
             this.CheckBxIIS.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBxIIS.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.CheckBxIIS.Location = new System.Drawing.Point(618, 20);
+            this.CheckBxIIS.Location = new System.Drawing.Point(740, 20);
             this.CheckBxIIS.Name = "CheckBxIIS";
             this.CheckBxIIS.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CheckBxIIS.Size = new System.Drawing.Size(41, 23);
@@ -130,7 +140,7 @@
             this.CheckBxActiveDirectory.Checked = true;
             this.CheckBxActiveDirectory.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBxActiveDirectory.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.CheckBxActiveDirectory.Location = new System.Drawing.Point(500, 20);
+            this.CheckBxActiveDirectory.Location = new System.Drawing.Point(323, 20);
             this.CheckBxActiveDirectory.Name = "CheckBxActiveDirectory";
             this.CheckBxActiveDirectory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CheckBxActiveDirectory.Size = new System.Drawing.Size(112, 23);
@@ -145,7 +155,7 @@
             this.CheckBxKeyA.Checked = true;
             this.CheckBxKeyA.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBxKeyA.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.CheckBxKeyA.Location = new System.Drawing.Point(337, 20);
+            this.CheckBxKeyA.Location = new System.Drawing.Point(441, 20);
             this.CheckBxKeyA.Name = "CheckBxKeyA";
             this.CheckBxKeyA.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CheckBxKeyA.Size = new System.Drawing.Size(56, 23);
@@ -159,7 +169,7 @@
             this.CheckBxFlashPlayer.Checked = true;
             this.CheckBxFlashPlayer.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBxFlashPlayer.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.CheckBxFlashPlayer.Location = new System.Drawing.Point(399, 20);
+            this.CheckBxFlashPlayer.Location = new System.Drawing.Point(639, 20);
             this.CheckBxFlashPlayer.Name = "CheckBxFlashPlayer";
             this.CheckBxFlashPlayer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CheckBxFlashPlayer.Size = new System.Drawing.Size(95, 23);
@@ -173,7 +183,7 @@
             this.CheckBxKasraPrintService.Checked = true;
             this.CheckBxKasraPrintService.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBxKasraPrintService.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.CheckBxKasraPrintService.Location = new System.Drawing.Point(200, 20);
+            this.CheckBxKasraPrintService.Location = new System.Drawing.Point(503, 20);
             this.CheckBxKasraPrintService.Name = "CheckBxKasraPrintService";
             this.CheckBxKasraPrintService.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CheckBxKasraPrintService.Size = new System.Drawing.Size(130, 23);

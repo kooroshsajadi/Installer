@@ -1,0 +1,2 @@
+CREATE
+LOGIN [kasra] WITH PASSWORD=N'ff763$.@4d3Gg575fwsqxx,bnu76tg'

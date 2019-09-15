@@ -82,6 +82,7 @@
             this.GroupBxApplication.Controls.Add(this.LbProjectPath);
             this.GroupBxApplication.Controls.Add(this.LbPort);
             this.GroupBxApplication.Controls.Add(this.LbSiteName);
+            this.GroupBxApplication.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.GroupBxApplication.Location = new System.Drawing.Point(12, 12);
             this.GroupBxApplication.Name = "GroupBxApplication";
             this.GroupBxApplication.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -119,7 +120,10 @@
             this.BtnProjectPathBrowser.BackColor = System.Drawing.Color.Transparent;
             this.BtnProjectPathBrowser.BackgroundImage = global::Installer.Properties.Resources.Group_2193_min;
             this.BtnProjectPathBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnProjectPathBrowser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnProjectPathBrowser.FlatAppearance.BorderSize = 0;
+            this.BtnProjectPathBrowser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnProjectPathBrowser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnProjectPathBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProjectPathBrowser.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnProjectPathBrowser.ForeColor = System.Drawing.Color.White;
@@ -139,6 +143,7 @@
             this.TxtBxProjectPath.Location = new System.Drawing.Point(395, 56);
             this.TxtBxProjectPath.Name = "TxtBxProjectPath";
             this.TxtBxProjectPath.ReadOnly = true;
+            this.TxtBxProjectPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtBxProjectPath.Size = new System.Drawing.Size(248, 26);
             this.TxtBxProjectPath.TabIndex = 2;
             this.TxtBxProjectPath.TextChanged += new System.EventHandler(this.TxtBxProjectPath_TextChanged);
@@ -196,6 +201,7 @@
             // 
             this.GroupBxModuleSelection.Controls.Add(this.checkBxWebServer);
             this.GroupBxModuleSelection.Controls.Add(this.CkeckBxRestaurant);
+            this.GroupBxModuleSelection.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.GroupBxModuleSelection.Location = new System.Drawing.Point(12, 409);
             this.GroupBxModuleSelection.Name = "GroupBxModuleSelection";
             this.GroupBxModuleSelection.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -231,8 +237,11 @@
             this.BtnInstallSoftware.BackColor = System.Drawing.Color.Transparent;
             this.BtnInstallSoftware.BackgroundImage = global::Installer.Properties.Resources.Group_2170_min;
             this.BtnInstallSoftware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnInstallSoftware.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnInstallSoftware.Enabled = false;
             this.BtnInstallSoftware.FlatAppearance.BorderSize = 0;
+            this.BtnInstallSoftware.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnInstallSoftware.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnInstallSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInstallSoftware.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnInstallSoftware.ForeColor = System.Drawing.Color.White;
@@ -250,7 +259,10 @@
             this.BtnPrevious.BackColor = System.Drawing.Color.Transparent;
             this.BtnPrevious.BackgroundImage = global::Installer.Properties.Resources.Group_2176_min;
             this.BtnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPrevious.FlatAppearance.BorderSize = 0;
+            this.BtnPrevious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnPrevious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPrevious.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnPrevious.ForeColor = System.Drawing.Color.White;
@@ -423,6 +435,7 @@
             this.GroupBxSQLServer.Controls.Add(this.LbBankUsername);
             this.GroupBxSQLServer.Controls.Add(this.LbInstanceName);
             this.GroupBxSQLServer.Controls.Add(this.LbBankName);
+            this.GroupBxSQLServer.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.GroupBxSQLServer.Location = new System.Drawing.Point(12, 118);
             this.GroupBxSQLServer.Name = "GroupBxSQLServer";
             this.GroupBxSQLServer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -437,7 +450,10 @@
             this.BtnBackupPathBrowser.BackColor = System.Drawing.Color.Transparent;
             this.BtnBackupPathBrowser.BackgroundImage = global::Installer.Properties.Resources.Group_2193_min;
             this.BtnBackupPathBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnBackupPathBrowser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnBackupPathBrowser.FlatAppearance.BorderSize = 0;
+            this.BtnBackupPathBrowser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnBackupPathBrowser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnBackupPathBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBackupPathBrowser.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnBackupPathBrowser.ForeColor = System.Drawing.Color.White;
@@ -456,7 +472,10 @@
             this.BtnLDFPathBrowser.BackColor = System.Drawing.Color.Transparent;
             this.BtnLDFPathBrowser.BackgroundImage = global::Installer.Properties.Resources.Group_2193_min;
             this.BtnLDFPathBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnLDFPathBrowser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnLDFPathBrowser.FlatAppearance.BorderSize = 0;
+            this.BtnLDFPathBrowser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnLDFPathBrowser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnLDFPathBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLDFPathBrowser.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnLDFPathBrowser.ForeColor = System.Drawing.Color.White;
@@ -475,7 +494,10 @@
             this.BtnMDFParhBrowser.BackColor = System.Drawing.Color.Transparent;
             this.BtnMDFParhBrowser.BackgroundImage = global::Installer.Properties.Resources.Group_2193_min;
             this.BtnMDFParhBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnMDFParhBrowser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMDFParhBrowser.FlatAppearance.BorderSize = 0;
+            this.BtnMDFParhBrowser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnMDFParhBrowser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnMDFParhBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMDFParhBrowser.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnMDFParhBrowser.ForeColor = System.Drawing.Color.White;
@@ -494,7 +516,10 @@
             this.BtnVerification.BackColor = System.Drawing.Color.Transparent;
             this.BtnVerification.BackgroundImage = global::Installer.Properties.Resources.Group_2169_min;
             this.BtnVerification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnVerification.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnVerification.FlatAppearance.BorderSize = 0;
+            this.BtnVerification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnVerification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnVerification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVerification.Font = new System.Drawing.Font("Vazir", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.BtnVerification.ForeColor = System.Drawing.Color.White;

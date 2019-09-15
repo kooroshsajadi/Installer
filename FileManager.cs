@@ -106,7 +106,7 @@ namespace Installer
                 }
 
                 // Log that all the publish path files have been copied.
-                FrmSoftwareInstallationObj.TextAppend = "\r\n" + DateTime.Now + "\r\nفایل های داخل مسیر پابلیش کامل و با موفقیت به مسیر پروژه کپی شدند.";
+                FrmSoftwareInstallationObj.TextAppend = "\r\n" + DateTime.Now + "\r\nفایل های داخل مسیر پابلیش کامل و با موفقیت به مسیر پروژه کپی شدند.\r\n\r\n";
             }
             catch (Exception ex)
             {
@@ -153,19 +153,40 @@ namespace Installer
                 SqlCommand myCommand = new SqlCommand(query, cnn);
                 cnn.Open();
                 myCommand.ExecuteNonQuery();
+
                 // Go to the path in which contains all the querries.
                 string pathToContainingFolder = Environment.CurrentDirectory + "\\ScriptsForInstaller";
-                string q = File.ReadAllText(pathToContainingFolder + "/1.txt");
-                QueryRunner(q, true);
-                string q1 = File.ReadAllText(pathToContainingFolder + "/2.txt");
-                string q2 = File.ReadAllText(pathToContainingFolder + "/3.txt");
-                string q3 = File.ReadAllText(pathToContainingFolder + "/4.txt");
-                QueryRunner(q1, q2, q3);
-                for(int i = 5; i <= 13; i++)
+                
+                // Exceute the queries related to dropping the login and user.
+                string q1 = File.ReadAllText(pathToContainingFolder + "/1.txt");
+                string q2 = File.ReadAllText(pathToContainingFolder + "/2.txt");
+                DropLoginOrUserOnExist(q1, q2);
+
+                // Excute the queries related to creationg the login and user and EXEC.
+                q1 = File.ReadAllText(pathToContainingFolder + "/3.txt");
+                q2 = File.ReadAllText(pathToContainingFolder + "/4.txt");
+                string q3 = File.ReadAllText(pathToContainingFolder + "/5.txt");
+                CreateLoginOrUserAndExec(q1, q2, q3);
+
+                // Execute the other queries.
+                for(int i = 6; i <= 14; i++)
                 {
-                    q = File.ReadAllText(pathToContainingFolder + "/" + i + ".txt");
-                    QueryRunner(q, false);
+                    q3 = File.ReadAllText(pathToContainingFolder + "/" + i + ".txt");
+                    myCommand = new SqlCommand(q3, cnn);
+                    myCommand.ExecuteNonQuery();
                 }
+
+                // Now restore the .bak file stored in Db folder.
+                string pathToBAK = FrmSoftwareInstallationObj.PublishPath + $@"\Db\db.bak";
+                connectionString += ";Integrated Security=True";
+                cnn.Close();
+                cnn = new SqlConnection(connectionString);
+                cnn.Open();
+                q3 = "Alter Database " + FrmSoftwareInstallationObj.DatabaseName + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                q3 += "Restore Database " + FrmSoftwareInstallationObj.DatabaseName + " FROM DISK ='" + pathToBAK + "' WITH REPLACE;";
+                myCommand = new SqlCommand(q3, cnn);
+                myCommand.CommandTimeout = 0;
+                myCommand.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -179,48 +200,43 @@ namespace Installer
                 }
             }
         }
-
-        // This method accesses the SQL server and modifies the databases as needed.
-        private void QueryRunner(string query, bool multipleDatabases)
-        { 
+        private void CreateLoginOrUserAndExec(string query1, string query2, string query3)
+        {
             // Create the essential variables to connect to the SQL server.
             string connectionString;
             SqlConnection cnn;
             SqlCommand myCommand;
-
             try
             {
-                if (multipleDatabases)
-                {
-                    // The databases are arranged in the same order as are given in the document.
-                    string[] dataBases = { "master", FrmSoftwareInstallationObj.DatabaseName, "model", "tempdb" };
+                // Execute the query related to creating login in the 'master' database.
+                connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=master;Data Source=" + FrmSoftwareInstallationObj.InstanceName;
+                cnn = new SqlConnection(connectionString);
+                myCommand = new SqlCommand(query1, cnn);
+                cnn.Open();
+                myCommand.ExecuteNonQuery();
 
-                    for (int i = 0; i < dataBases.Length; i++)
-                    {
-                        // Define the connection string and add the appropraite database name to it in each iteration.
-                        connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + dataBases[i] + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
-                        cnn = new SqlConnection(connectionString);
-                        myCommand = new SqlCommand(query, cnn);
-                        cnn.Open();
-                        myCommand.ExecuteNonQuery();
-                    }
-                }
-                else // in this condition the connection string contains the database name given by the user.
+                // Now execute the query related to creating the user in each database except the 'master'
+                // and then run the EXEC query.
+                string[] dataBases = { FrmSoftwareInstallationObj.DatabaseName, "model", "tempdb" };
+
+                for (int i = 0; i < dataBases.Length; i++)
                 {
-                    connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + FrmSoftwareInstallationObj.DatabaseName + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
+                    connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + dataBases[i] + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
                     cnn = new SqlConnection(connectionString);
-                    myCommand = new SqlCommand(query, cnn);
+                    myCommand = new SqlCommand(query2, cnn);
                     cnn.Open();
                     myCommand.ExecuteNonQuery();
-                    cnn.Close();
+
+                    myCommand = new SqlCommand(query3, cnn);
+                    myCommand.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message);
             }
         }
-        private void QueryRunner(string query1, string query2, string query3)
+        private void DropLoginOrUserOnExist(string query1, string query2)
         {
             // Create the essential variables to connect to the SQL server.
             string connectionString;
@@ -229,32 +245,28 @@ namespace Installer
 
             try
             {
+                // Execute the query related to droping login in the 'master' database.
                 connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=master;Data Source=" + FrmSoftwareInstallationObj.InstanceName;
                 cnn = new SqlConnection(connectionString);
                 myCommand = new SqlCommand(query1, cnn);
                 cnn.Open();
                 myCommand.ExecuteNonQuery();
-                cnn.Close();
-                // The databases are arranged in the same order as are given in the document.
+
+                // Now execute the query related to dropping the user in each database except the 'master'.
                 string[] dataBases = { FrmSoftwareInstallationObj.DatabaseName, "model", "tempdb" };
+
                 for (int i = 0; i < dataBases.Length; i++)
                 {
-                    // Define the connection string and in each iteration place the appropriate database in it.
                     connectionString = "Password=" + FrmSoftwareInstallationObj.Password + ";Persist Security Info=True;User ID=" + FrmSoftwareInstallationObj.Username + ";Initial Catalog=" + dataBases[i] + ";Data Source=" + FrmSoftwareInstallationObj.InstanceName;
                     cnn = new SqlConnection(connectionString);
                     myCommand = new SqlCommand(query2, cnn);
                     cnn.Open();
                     myCommand.ExecuteNonQuery();
-                    cnn.Close();
-                    myCommand = new SqlCommand(query3, cnn);
-                    cnn.Open();
-                    myCommand.ExecuteNonQuery();
-                    cnn.Close();
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message);
             }
         }
     }

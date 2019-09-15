@@ -110,6 +110,27 @@ namespace Installer
                 MessageBox.Show(ex.Message);
             }
         }
+        public void InstallFlashPlayerAndLog()
+        {
+            try
+            {
+                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nشروع فرایند نصب Flash Player...\r\n\r\n";
+                string installerFilePath = FrmFeaturesInstallationObj.PublishPath + @"\Prerequisities\{12D0E98F-D333-43A4-9C42-991C9A9B061E}\install_flash_player_11_active_x_64bit.msi";
+                Process installerProcess = Process.Start(installerFilePath, "/q");
+                while (installerProcess.HasExited == false)
+                {
+                    //indicate progress to user 
+                    System.Windows.Forms.Application.DoEvents();
+                }
+                // Log that Flash Player has been installed.
+                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nنصب Flash Player با موفقیت تکمیل شد.\r\n\r\n";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
         public void InstallKasraPrintServiceAndLog()
         {
             try
@@ -123,18 +144,13 @@ namespace Installer
                     System.Windows.Forms.Application.DoEvents();
                 }
                 // Log that the Kasra Point Service has been installed.
-                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nنصب Kasra Print Service با موفقیت انجام شد.\r\n\r\n";
+                FrmFeaturesInstallationObj.TextAppend = DateTime.Now + "\r\nنصب Kasra Print Service با موفقیت تکمیل شد.\r\n\r\n";
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        public void InstallFlashPlayer()
-        {
-
-        }
-
         public void ConfigureWebsite()
         {
             try
