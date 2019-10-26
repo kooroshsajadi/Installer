@@ -86,9 +86,24 @@ namespace Installer
 
                 // Get the list of the databases in the server and check whether the given name is contained or not.
                 List<string> list = GetDatabaseList(cnn);
-                if (list.Contains(FrmInstallAndSetUpSystemObj.DatabaseName))
+
+                // This valriable turns to true if a database with the same name exists.
+                bool databaseExists = false;
+                // This variable will hold the database name which is equivalent to the given name.
+                string databaseName = "";
+                // The database names musn't be the same even if their characters differ in being lower or upper case.
+                for(int i = 0; i < list.Count; i++)
                 {
-                    MessageBox.Show("!" + "در سرور موجود است" + "." + "لطفا نام دیگری انتخاب کنید " + FrmInstallAndSetUpSystemObj.DatabaseName + " دیتابیسی با نام");
+                    if(list[i].ToLower() == FrmInstallAndSetUpSystemObj.DatabaseName.ToLower())
+                    {
+                        databaseExists = true;
+                        databaseName = list[i];
+                        break;
+                    }
+                }
+                if (databaseExists)
+                {
+                    MessageBox.Show("!" + "در سرور موجود است" + "." + "لطفا نام دیگری انتخاب کنید " + databaseName + " دیتابیسی با نام");
                     FrmInstallAndSetUpSystemObj.DatabaseName = string.Empty;
                 }
                 else

@@ -43,7 +43,6 @@
             this.ProgressBar.Size = new System.Drawing.Size(780, 46);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.ProgressBar.TabIndex = 1;
-            this.ProgressBar.Click += new System.EventHandler(this.ProgressBar_Click);
             // 
             // TxtBxLog
             // 

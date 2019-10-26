@@ -144,7 +144,7 @@ namespace Installer
             string query = $@"CREATE DATABASE {FrmSoftwareInstallationObj.DatabaseName} ON PRIMARY 
                             (NAME = {FrmSoftwareInstallationObj.DatabaseName}_Data, 
                             FILENAME = '{path}\{FrmSoftwareInstallationObj.DatabaseName}.mdf', 
-                            SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%) 
+                            SIZE = 5MB, MAXSIZE = 10MB, FILEGROWTH = 10%) 
                             LOG ON (NAME = {FrmSoftwareInstallationObj.DatabaseName}_Log, 
                             FILENAME = '{path}\{FrmSoftwareInstallationObj.DatabaseName}.ldf', 
                             SIZE = 1MB, MAXSIZE = 5MB, FILEGROWTH = 10%)";

@@ -62,11 +62,6 @@ namespace Installer
             InitializeComponent();
         }
 
-        private void ProgressBar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmSoftwareInstallation_Load(object sender, EventArgs e)
         {
             try
@@ -77,14 +72,15 @@ namespace Installer
                     
                     FileManager fileMngObj = new FileManager(this);
 
-                    //fileMngObj.CreateKasraDirectory();
+                    fileMngObj.CreateKasraDirectory();
                     fileMngObj.CreateAutoBackupDirectory();
                     TextAppend = "در حال restore کردن دیتابیس...\r\n\r\n";
                     fileMngObj.RestoreDatabase();
-                    TextAppend = "پایان فرایند restore کردن دیتابیس\r\n\r\n";
-                    TextAppend = "در حال ساختن فولدر های لازم...\r\n\r\n";
+                    TextAppend = "پایان فرایند restore کردن دیتابیس.\r\n\r\n";
+
                     // Copy the essential files into the project folder in order to configure the website.
-                    //fileMngObj.CopyAndLog();
+                    TextAppend = "در حال ساختن فولدر های لازم...\r\n\r\n";
+                    fileMngObj.CopyAndLog();
 
                     Installation installation = new Installation(this);
                     installation.ConfigureWebsite();
@@ -98,16 +94,16 @@ namespace Installer
                     string log = TxtBxLog.Text;
                     FileManager.SaveLog(logFileName, storagePath, log);
 
-                    // Show a message box to show that the installation process completed.
-                    // If IIS was installed during the execution then the user will be 
-                    // prompted to decide whether to restart immediately or not.
+                     // Show a message box to show that the installation process completed.
+                     // If IIS was installed during the execution then the user will be 
+                     // prompted to decide whether to restart immediately or not.
                     if (!IISInstalled || IISInstalled.Equals(null))
                     {
                         MessageBox.Show("." + "فرایند نصب با موفقیت تکمیل شد");
                     }
                     else
                     {
-                        if (MessageBox.Show("؟" + " دارید " + " restart " + " آیا اکنون تمایل به", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("دارید ؟" + " restart " + " آیا اکنون تمایل به", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             System.Diagnostics.Process.Start("ShutDown", "/r");
                         }

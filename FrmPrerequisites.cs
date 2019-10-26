@@ -59,10 +59,14 @@ namespace Installer
                     {
                         TxtBxPublishPath.Text = folderBrowserDialog1.SelectedPath;
                         // These lines enable the 'BtnNext' if all of its status cells are true.
-                        int numberOfRows = dataGridView1.DisplayedRowCount(false);
-                        if(numberOfRows == 3)
+                        // Set the number of rows to 'dataGridView1.DisplayedRowCount(false)' when you fixed the firewall problem.
+                        int numberOfRows = dataGridView1.DisplayedRowCount(false) - 1;
+
+                        // Correct the numberOfRows to 3 after you fixed the firewall.
+                        if (numberOfRows == 2)
                         {
                             int count = 0;
+
                             for (int i = 0; i < numberOfRows; i++)
                             {
                                 if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "True")
@@ -84,8 +88,8 @@ namespace Installer
         {
             try
             {
-                Prerequisite prequisities = new Prerequisite();
-                List<PrerequisiteViewModel> list = prequisities.GetPrerequisitesList();
+                Prerequisite prequisites = new Prerequisite();
+                List<PrerequisiteViewModel> list = prequisites.GetPrerequisitesList();
                 dataGridView1.Rows.Clear();
                 for (int i = 0; i < list.Count; i++)
                 {
@@ -98,17 +102,24 @@ namespace Installer
                     {
                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     }
+                    // We can't find the status of the firewall yet. So its color would be yellow.
+                    if (i == 2)
+                        dataGridView1.Rows[2].DefaultCellStyle.BackColor = Color.Yellow;
                 }
-                    
+
                 BtnRerun.Enabled = true;
 
                 // These lines enable the continue button if the publish path is entered and all the status properties are true.
+                // At the moment, the firewall status does not get checked.
                 if (!string.IsNullOrEmpty(TxtBxPublishPath.Text))
                 {
-                    int count = 0;
-                    foreach (PrerequisiteViewModel obj in list)
+                    // The variable 'count' is now set to 1 because the firewall status is not important at the moment.
+                    int count = 1;
+
+                    // The variable 'i' goes until 'list.count - 1' since the firewall status is not important yet.
+                    for (int i = 0; i < list.Count - 1; i++)
                     {
-                        if (obj.Status == true)
+                        if (list[i].Status == true)
                             count++;
                     }
                     if (count == list.Count)
@@ -142,12 +153,18 @@ namespace Installer
                     {
                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     }
+                    // Omit this part when the firewall problem gets fixed.
+                    if(i == 2)
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                 }
                 // These codes enable the continue button if the publish path is entered and all the status properties are true.
                 if (!string.IsNullOrEmpty(TxtBxPublishPath.Text))
                 {
-                    int numberOfRows = dataGridView1.DisplayedRowCount(false);
-                    if (numberOfRows == 3)
+                    // Increment the numberOfRows by 1 when the firewall problem is fixed.
+                    int numberOfRows = dataGridView1.DisplayedRowCount(false) - 1;
+
+                    // Set this condition to 3 when the firewall problem is fixed.
+                    if (numberOfRows == 2)
                     {
                         int count = 0;
                         for (int i = 0; i < numberOfRows; i++)
